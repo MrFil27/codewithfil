@@ -410,12 +410,12 @@ section {
     height: 140px;
     margin: 0 auto 20px;
     border-radius: 50%;
-    background: var(--surface-2);
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    background-image: url('./person.png');
+    background-size: 170%;
+    background-position: center 26%;
+    background-repeat: no-repeat;
 }
 
 .avatar-ring::before {
@@ -427,11 +427,6 @@ section {
     opacity: .4;
 }
 
-.avatar-ring svg {
-    width: 70px;
-    height: 70px;
-    color: var(--text-faint);
-}
 
 .avatar-card h3 {
     font-family: var(--mono);
