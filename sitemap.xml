@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codewithfil.it/#server</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codewithfil.it/#contact</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
