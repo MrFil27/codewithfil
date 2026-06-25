@@ -165,6 +165,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#services">Servizi</a></li>
+                <li><a href="#server">Server</a></li>
                 <li><a href="#contact">Contatti</a></li>
             </ul>
             <button class="navtoggle" id="navtoggle"
@@ -188,7 +189,7 @@
             <div class="term">
                 <div class="term-bar">
                     <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
-                    <span class="tname">about-me.java</span>
+                    <span class="tname">AboutMe.java</span>
                 </div>
                 <div class="term-body">
                     <div class="ln"><span class="key">public class</span>&nbsp;Developer {</div>
@@ -231,6 +232,11 @@
                         <strong>Spring/Spring Boot</strong>: l'approccio non è troppo distante da come strutturo già i
                         plugin e i database, quindi la curva di apprendimento è breve.
                     </p>
+                    <p>Mi posiziono come <strong>Mid-Level</strong> (sviluppatore intermedio), sebbene sto attualmente frequentando un 
+                        <strong>corso ITS Umbria</strong> nel settore <strong>IT</strong>, 
+                        tutte le mie conoscenze le ho acquisite da autodidatta, solo grazie a questo corso e ulteriori esperienze lavorative,
+                        mi hanno aiutato a esplorare il mondo del lavoro come developer, nonché ulteriori progetti personali che mostrerò di seguito.
+                    </p>
                     <p>Sul fronte web lavoro con <strong>HTML, CSS e JavaScript</strong> nativi, oltre a framework come
                         <strong>Laravel</strong> e <strong>CodeIgniter</strong>, con <strong>Tailwind CSS</strong> per
                         lo styling. Ho esperienza anche con <strong>Node.js e npm</strong>, usati attivamente nel
@@ -272,7 +278,7 @@
             <div class="ide">
                 <div class="ide-bar">
                     <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
-                    <span class="tname">skills.explorer</span>
+                    <span class="tname">skills.properties</span>
                 </div>
 
                 <div class="ide-tree" id="skillTree">
@@ -293,6 +299,8 @@
                                 style="background:var(--blue)"></span>Database</div>
                         <div class="tree-item" data-target="skill-docker"><span class="level-dot"
                                 style="background:var(--blue)"></span>Docker</div>
+                        <div class="tree-item" data-target="skill-git"><span class="level-dot"
+                                style="background:var(--amber)"></span>Git</div>
                     </div>
                 </div>
 
@@ -371,7 +379,7 @@
                     </div>
 
                     <div class="skill-block" id="skill-git">
-                        <h3>Git &amp; Version Control</h3>
+                        <h3>Git &amp; Version control</h3>
                         <div class="lvl-line"><span class="lvl-tag solid">Uso quotidiano</span></div>
                         <p>Uso Git quotidianamente in tutti i miei progetti. Il mio GitHub 
                             pubblico fornito contiene principalmente progetti per divertimento 
@@ -379,7 +387,7 @@
                             il mio work style.</p>
                         
                         <p>I veri progetti su cui lavoro sono spesso under NDA (non-disclosure agreement),
-                            quindi ospitati su repository private.</p>
+                            quindi ospitati su repository private. Ho veramente tanti progetti sviluppati.</p>
                     </div>
 
                 </div>
@@ -412,6 +420,46 @@
                     <h3>Siti web back-end</h3>
                     <p>Sistemi di gestione database puliti e funzionali: login/registrazione, conversazioni e altro.</p>
                     <a href="#" class="svc-link disabled">In arrivo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="server">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="eyebrow">progetto personale</div>
+                <h2 class="section-title">EndlessHorizons Network</h2>
+            </div>
+            <div class="server-showcase">
+                <div class="server-logo-card">
+                    <img src="https://glitchvalley.it/images/logo.png" alt="EndlessHorizons Network Logo" class="server-logo">
+                    <span class="status-pill"><span class="dot"></span>Online</span>
+                    <div class="server-meta">
+                        <div class="server-stat">
+                            <span class="stat-label">IP</span>
+                            <span class="stat-val stat-mono">glitchvalley.it</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="stat-label">Versione</span>
+                            <span class="stat-val">1.16.4 – 1.21.3</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="stat-label">Modalità</span>
+                            <span class="stat-val">RolePlay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <p><strong>EndlessHorizons Network</strong> è un server Minecraft, costruito attorno a un'esperienza di <strong>RolePlay</strong> open-world da un 
+                        team appassionato di sviluppo e di building da diverse parti d'Italia. In questa piattaforma i giocatori possono simulare la vita reale e viverla come preferiscono.</p>
+                    <p>Dietro le quinte abbiamo sviluppato <strong>plugin Bukkit custom</strong> efficienti (linguaggio Java) per alimentare le meccaniche di gioco, 
+                        gestito l'infrastruttura del server e costruito il sito ufficiale <strong>glitchvalley.it</strong> combinando Laravel, Node.js e Tailwind CSS. 
+                        È il progetto che meglio racchiude tutte le mie competenze in un unico posto.</p>
+                    <p>È proprio qua che nascondo il mio vero <strong>codice sorgente</strong> di tutto ciò che sviluppiamo (git della piattaforma). Come citato, tutto ciò
+                        che vedete nel mio Git personale è solo a scopo di divertimento e meme.
+                    </p>
+                    <a href="https://glitchvalley.it" target="_blank" class="btn btn-primary server-btn">Visita glitchvalley.it →</a>
                 </div>
             </div>
         </div>
@@ -471,7 +519,7 @@
                         <label for="cf-msg">Messaggio</label>
                         <textarea id="cf-msg" name="Message" placeholder="Raccontami del tuo progetto..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Invia
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" disabled>Invia
                         messaggio</button>
                 </form>
             </div>
