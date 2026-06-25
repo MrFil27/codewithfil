@@ -438,7 +438,18 @@ section {
 .avatar-card .role {
     font-size: 13px;
     color: var(--text-dim);
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+}
+
+.avatar-card .meta-line {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--text-faint);
+    line-height: 1.5;
+}
+
+.avatar-card .meta-line:first-of-type {
+    margin-top: 2px;
 }
 
 .status-pill {
