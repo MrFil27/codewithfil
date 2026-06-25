@@ -473,13 +473,13 @@ section {
 }
 
 .about-text p {
-    color: var(--text-dim);
+    color: var(--text);
     margin-bottom: 18px;
     font-size: 15.5px;
 }
 
 .about-text strong {
-    color: var(--text);
+    color: #fff;
     font-weight: 600;
 }
 
@@ -845,14 +845,14 @@ section {
 }
 
 .server-info p {
-    color: var(--text-dim);
+    color: var(--text);
     font-size: 15.5px;
     margin-bottom: 16px;
     line-height: 1.7;
 }
 
 .server-info strong {
-    color: var(--text);
+    color: #fff;
     font-weight: 600;
 }
 
