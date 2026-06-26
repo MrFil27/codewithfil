@@ -1,0 +1,56 @@
+name: Deploy su GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout (complete history for and commit count)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare website and generate version.json
+        run: |
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.1.$(git rev-list --count HEAD)")
+          DATE=$(git log -1 --format=%cd --date=format:'%Y-%m-%d')
+          COMMIT=$(git rev-parse --short HEAD)
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
+          cat > _site/version.json <<EOF
+          {
+            "version": "$VERSION",
+            "date": "$DATE",
+            "commit": "$COMMIT"
+          }
+          EOF
+          echo "version.json generato:"; cat _site/version.json
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Load artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy on Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

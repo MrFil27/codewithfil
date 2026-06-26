@@ -19,6 +19,19 @@ treeItems.forEach(item => {
 // ----- footer year -----
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ----- footer version (version.json generato da GitHub Actions a ogni deploy) -----
+fetch('version.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(v => {
+        if (!v) return;
+        const el = document.getElementById('versionTag');
+        if (!el) return;
+        const p = (v.date || '').split('-');
+        const dateStr = p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : v.date;
+        el.textContent = `${v.version} · ${dateStr}`;
+    })
+    .catch(() => {});
+
 // ----- contact form (Google Sheet endpoint, da mantenere o sostituire) -----
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyeXu86g9wAgDF_kDZlTU-zEMJnlPlD7Udp5WaIbhZCT-VutI91aGwNqruESLN6lTcEJw/exec';
 const form = document.getElementById('contactForm');
