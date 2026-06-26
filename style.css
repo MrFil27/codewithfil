@@ -471,7 +471,15 @@ section {
 }
 
 .avatar-card .meta-line:first-of-type {
-    margin-top: 2px;
+    margin-top: 12px;
+}
+
+.avatar-card .slogan {
+    margin-top: 14px;
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--text-dim);
+    line-height: 1.5;
 }
 
 .status-pill {
