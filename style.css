@@ -228,7 +228,7 @@ nav {
     font-weight: 800;
     line-height: 1.15;
     color: #fff;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .hero h1 .accent {
@@ -236,6 +236,22 @@ nav {
 }
 
 .hero h1 .accent2 {
+    color: var(--green);
+}
+
+.hero-role {
+    font-family: var(--mono);
+    font-size: clamp(17px, 2.4vw, 22px);
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 26px;
+}
+
+.hero-role .accent {
+    color: var(--amber);
+}
+
+.hero-role .accent2 {
     color: var(--green);
 }
 
@@ -340,12 +356,18 @@ nav {
     font-family: var(--mono);
     font-size: 13.5px;
     color: var(--text-dim);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.term-body::-webkit-scrollbar {
+    height: 6px;
 }
 
 .term-body .ln {
-    display: flex;
-    gap: 10px;
     margin-bottom: 10px;
+    white-space: nowrap;
 }
 
 .term-body .ln:last-child {
