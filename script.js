@@ -41,3 +41,21 @@ form.addEventListener('submit', e => {
         .then(() => { form.reset(); })
         .catch(err => console.error('Errore invio form:', err));
 });
+
+// ----- blocco zoom (pinch touchpad, Ctrl+rotellina, scorciatoie tastiera, gesture Safari) -----
+// Pinch del touchpad e Ctrl+scroll generano un evento 'wheel' con ctrlKey=true
+window.addEventListener('wheel', e => {
+    if (e.ctrlKey) e.preventDefault();
+}, { passive: false });
+
+// Scorciatoie: Ctrl/Cmd + ('+', '-', '=', '_', '0')
+window.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && ['+', '-', '=', '_', '0'].includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
+// Safari (macOS/iOS): eventi gesture del pinch
+['gesturestart', 'gesturechange', 'gestureend'].forEach(evt =>
+    document.addEventListener(evt, e => e.preventDefault())
+);
