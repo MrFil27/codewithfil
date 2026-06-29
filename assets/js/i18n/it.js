@@ -17,9 +17,9 @@ window.I18N.register('it', {
     strings: {
         'collab.eyebrow': 'collaborazione',
         'collab.title': 'Featured Collaborator',
-        'collab.name': 'Kyrolos Ebrahem',
+        'collab.name': 'KyremWorks',
         'collab.role': 'Lead Developer, EndlessHorizons Network',
-        'collab.desc': 'Sviluppatore senior e creativo, co-architetto tecnico di EHN. Competente in backend, design e sviluppo full-stack.',
+        'collab.desc': 'Sviluppatore senior e creativo. Co-architetto tecnico di EHN. Collaboriamo su diversi progetti privati oltre al server.',
         'collab.visit': 'Visita il portfolio →',
         'footer.collab': 'Collaborando con'
     },

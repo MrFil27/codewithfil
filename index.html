@@ -207,21 +207,13 @@
                     <a href="#skills" class="btn btn-ghost" data-i18n="hero.cta2">Vedi le competenze</a>
                 </div>
             </div>
-            <div class="term">
+            <div class="term" id="ideEditor">
                 <div class="term-bar">
                     <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
-                    <span class="tname">AboutMe.java</span>
+                    <span class="tname" id="ideFileName">AboutMe.java</span>
                 </div>
-                <div class="term-body">
-                    <div class="ln"><span class="key">public class</span>&nbsp;Developer {</div>
-                    <div class="ln">&nbsp;&nbsp;<span class="key">String</span> name = <span
-                            class="str">"Filippo"</span>;</div>
-                    <div class="ln">&nbsp;&nbsp;<span class="key">String[]</span> stack = {<span class="str">"Java"</span>, <span class="str">"PHP"</span>, <span class="str">"JS"</span>};</div>
-                    <div class="ln">&nbsp;&nbsp;<span class="key">boolean</span> curiousByNature = <span
-                            class="key">true</span>;</div>
-                    <div class="ln">&nbsp;&nbsp;<span class="com">// Bukkit plugins, Discord bots,</span></div>
-                    <div class="ln">&nbsp;&nbsp;<span class="com">// Laravel & Node.js projects</span></div>
-                    <div class="ln">}</div>
+                <div class="term-body" id="ideBody">
+                    <!-- righe generate da JavaScript -->
                 </div>
             </div>
         </div>
@@ -491,11 +483,14 @@
                 <h2 class="section-title" data-i18n="collab.title">Featured Collaborator</h2>
             </div>
             <div class="collab-card">
+                <div class="collab-avatar">
+                    <img src="./assets/img/kyremworks.png" alt="KyremWorks" />
+                </div>
                 <div class="collab-content">
-                    <h3 data-i18n="collab.name">Kyrolos Ebrahem</h3>
+                    <h3 data-i18n="collab.name">KyremWorks</h3>
                     <p class="collab-role" data-i18n="collab.role">Lead Developer, EndlessHorizons Network</p>
-                    <p data-i18n="collab.desc">Sviluppatore senior e creativo, co-architetto tecnico di EHN. Competente in backend, design e sviluppo full-stack.</p>
-                    <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="collab.visit">Visita il portfolio →</a>
+                    <p data-i18n="collab.desc">Senior developer and creative technologist. Co-architect of EHN's backend. We collaborate on multiple private projects beyond the server.</p>
+                    <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="collab.visit">Visit portfolio →</a>
                 </div>
             </div>
         </div>
@@ -565,7 +560,13 @@
     <footer>
         <div class="wrap">
             <div>© <span id="year"></span> CodeWithFil — <span data-i18n="footer.rights">tutti i diritti riservati</span><span class="version-tag" id="versionTag"></span></div>
-            <div class="footer-partner"><span data-i18n="footer.collab">Collaborating with</span> <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer">Kyrolos Ebrahem</a></div>
+            <div class="footer-partner">
+                <span data-i18n="footer.collab">Collaborating with</span>
+                <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="footer-partner-link">
+                    <img src="./assets/img/kyremworks.png" alt="KyremWorks" class="footer-partner-img" />
+                    KyremWorks
+                </a>
+            </div>
         </div>
     </footer>
 

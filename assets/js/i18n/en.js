@@ -121,9 +121,9 @@ window.I18N.register('en', {
         // ---- Collaborators ----
         'collab.eyebrow': 'collaboration',
         'collab.title': 'Featured Collaborator',
-        'collab.name': 'Kyrolos Ebrahem',
+        'collab.name': 'KyremWorks',
         'collab.role': 'Lead Developer, EndlessHorizons Network',
-        'collab.desc': 'Senior developer and creative technologist, co-architect of EHN\'s backend. Skilled in backend, design, and full-stack development.',
+        'collab.desc': 'Senior developer and creative technologist. Co-architect of EHN\'s backend. We collaborate on multiple private projects beyond the server.',
         'collab.visit': 'Visit portfolio →',
         'footer.collab': 'Collaborating with'
     }
