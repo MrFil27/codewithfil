@@ -15,15 +15,15 @@
     <meta name="robots" content="index, follow, noimageindex, max-snippet:-1, max-video-preview:-1">
     
     <!-- Favicon -->
-    <link rel="icon" href="./favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="./favicon.png">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
     
     <!-- Open graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://codewithfil.it">
     <meta property="og:title" content="CodeWithFil — Java & Web Developer">
     <meta property="og:description" content="Sviluppatore Java e Web. Plugin Bukkit, bot Discord, applicazioni web con Laravel e Spring Boot.">
-    <meta property="og:image" content="https://codewithfil.it/favicon_square.png">
+    <meta property="og:image" content="https://codewithfil.it/assets/img/favicon_square.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CodeWithFil">
@@ -34,7 +34,7 @@
     <meta property="twitter:url" content="https://codewithfil.it">
     <meta property="twitter:title" content="CodeWithFil — Java & Web Developer">
     <meta property="twitter:description" content="Sviluppatore Java e Web. Plugin Bukkit, bot Discord, applicazioni web con Laravel e Spring Boot.">
-    <meta property="twitter:image" content="https://codewithfil.it/favicon_square.png">
+    <meta property="twitter:image" content="https://codewithfil.it/assets/img/favicon_square.png">
     <meta name="twitter:creator" content="@codewithfil">
     
     <!-- Canonical -->
@@ -47,7 +47,7 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     
     <!-- JSON-LD Schema markup -->
     <script type="application/ld+json">
@@ -56,7 +56,7 @@
       "@type": "Person",
       "name": "Filippo Hinceanu",
       "url": "https://codewithfil.it",
-      "image": "https://codewithfil.it/favicon.png",
+      "image": "https://codewithfil.it/assets/img/favicon.png",
       "jobTitle": "Java & Web Developer",
       "description": "Sviluppatore Java e Web specializzato in plugin Bukkit, bot Discord e applicazioni web.",
       "email": "hinceanufilippo4@gmail.com",
@@ -95,7 +95,7 @@
       "@type": "LocalBusiness",
       "name": "CodeWithFil",
       "url": "https://codewithfil.it",
-      "image": "https://codewithfil.it/favicon.png",
+      "image": "https://codewithfil.it/assets/img/favicon.png",
       "description": "Portfolio e servizi di sviluppo software specializzato in Java e Web Development",
       "address": {
         "@type": "PostalAddress",
@@ -161,29 +161,50 @@
         <nav>
             <div class="brand"><span class="dot"></span>codewithfil<span style="color:var(--text-faint)">.it</span>
             </div>
-            <ul class="navlinks" id="navlinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Servizi</a></li>
-                <li><a href="#server">Server</a></li>
-                <li><a href="#contact">Contatti</a></li>
-            </ul>
-            <button class="navtoggle" id="navtoggle"
-                aria-label="Apri menu"><span></span><span></span><span></span></button>
+            <div class="nav-right">
+                <ul class="navlinks" id="navlinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
+                    <li><a href="#server">Server</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
+                </ul>
+                <div class="lang-switch" id="langSwitch">
+                    <button class="lang-current" id="langBtn" type="button" aria-haspopup="listbox"
+                        aria-expanded="false" aria-label="Cambia lingua" data-i18n-aria-label="aria.lang">
+                        <span class="flag" id="currentFlag"></span>
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <ul class="lang-menu" id="langMenu" role="listbox"></ul>
+                </div>
+                <button class="navtoggle" id="navtoggle"
+                    aria-label="Apri menu" data-i18n-aria-label="aria.menu"><span></span><span></span><span></span></button>
+            </div>
         </nav>
     </header>
+
+    <!-- Bandiere SVG: template clonati dal menu lingua (script.js) -->
+    <template id="flag-it">
+        <svg class="flag-svg" viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" x="0" fill="#009246"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+    </template>
+    <template id="flag-en">
+        <svg class="flag-svg" viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ukclip"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#ffffff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" clip-path="url(#ukclip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#ffffff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg>
+    </template>
 
     <section class="hero" id="home">
         <div class="wrap">
             <div>
                 <div class="hero-greeting">~/portfolio <span class="blink"></span></div>
-                <h1>Ciao, sono <span class="accent">Filippo</span></h1>
-                <p class="hero-role"><span class="accent">Java</span> &amp; <span class="accent2">Web</span> developer</p>
-                <p class="lede">Sviluppo plugin Bukkit, bot Discord e applicazioni web da diversi anni. Mi piace
+                <h1 data-i18n="hero.title">Ciao, sono <span class="accent">Filippo</span></h1>
+                <p class="hero-role"><span class="role-text" id="roleText">Java developer</span><span class="role-caret" aria-hidden="true"></span></p>
+                <p class="lede" data-i18n="hero.lede">Sviluppo plugin Bukkit, bot Discord e applicazioni web da diversi anni. Mi piace
                     costruire cose che funzionano bene, senza fronzoli inutili.</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Contattami</a>
-                    <a href="#skills" class="btn btn-ghost">Vedi le competenze</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Contattami</a>
+                    <a href="#skills" class="btn btn-ghost" data-i18n="hero.cta2">Vedi le competenze</a>
                 </div>
             </div>
             <div class="term">
@@ -209,32 +230,32 @@
     <section id="about">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow">chi sono</div>
+                <div class="eyebrow" data-i18n="about.eyebrow">chi sono</div>
                 <h2 class="section-title">About me</h2>
             </div>
             <div class="about-grid">
                 <div class="avatar-card">
                     <div class="avatar-ring"></div>
                     <h3>Filippo</h3>
-                    <div class="meta-line">21 anni</div>
+                    <div class="meta-line" data-i18n="about.age">21 anni</div>
                     <div class="meta-line">Perugia</div>
-                    <div class="slogan">La curiosità è il mio linguaggio preferito!</div>
+                    <div class="slogan" data-i18n="about.slogan">La curiosità è il mio linguaggio preferito!</div>
                     <!--<span class="status-pill"><span class="dot"></span>Disponibile per progetti</span>-->
                 </div>
                 <div class="about-text">
-                    <p>C'è stato un tempo in cui la parola <strong>«developer»</strong> non significava niente per me. La incontrai per 
-                        caso in una community online, accanto al nome di qualcuno come fosse un titolo nobiliare. 
-                        «E quello cosa fa?». Ricevetti una risposta che, lo ammetto, non chiariva granché, 
-                        ma bastò a farmi cadere nella tana del coniglio. Da lì non sono più uscito: oggi quel termine 
+                    <p data-i18n="about.p1">C'è stato un tempo in cui la parola <strong>«developer»</strong> non significava niente per me. La incontrai per
+                        caso in una community online, accanto al nome di qualcuno come fosse un titolo nobiliare.
+                        «E quello cosa fa?». Ricevetti una risposta che, lo ammetto, non chiariva granché,
+                        ma bastò a farmi cadere nella tana del coniglio. Da lì non sono più uscito: oggi quel termine
                         misterioso è semplicemente il mio mestiere. Mi chiamo Filippo, e uno sviluppatore Java e Web.</p>
-                    <p>Ciò che mi appassiona non è soltanto scrivere codice, ma veder nascere qualcosa di concreto da
+                    <p data-i18n="about.p2">Ciò che mi appassiona non è soltanto scrivere codice, ma veder nascere qualcosa di concreto da
                         un'idea: prendere un problema, scomporlo e osservare i pezzi incastrarsi finché tutto non
                         funziona. Sono un <strong>curioso per natura</strong>: mi affascina l'universo e in generale
                         tutto ciò che mi spinge a chiedermi <em>come funzionano le cose</em>; in fondo, la stessa domanda
                         che mi tiene davanti allo schermo.</p>
-                    <p>Mi considero uno sviluppatore <strong>Mid-Level</strong> (intermedio): gran parte di ciò che so
+                    <p data-i18n="about.p3">Mi considero uno sviluppatore <strong>Mid-Level</strong> (intermedio): gran parte di ciò che so
                         l'ho imparato da <strong>autodidatta</strong>, costruendo progetti reali e sbagliando finché non
-                        funzionavano. Oggi sto consolidando queste competenze con un <strong>corso ITS Umbria in ambito IT</strong> 
+                        funzionavano. Oggi sto consolidando queste competenze con un <strong>corso ITS Umbria in ambito IT</strong>
                         che, insieme alle prime esperienze lavorative, mi sta aiutando a muovermi nel
                         mondo del lavoro come developer, oltre a dare forma ai progetti personali che mostro di seguito.
                     </p>
@@ -248,15 +269,15 @@
             <div class="fact-row">
                 <div class="fact">
                     <div class="num">2021</div>
-                    <div class="label">La mia primissima riga di codice</div>
+                    <div class="label" data-i18n="about.fact1">La mia primissima riga di codice</div>
                 </div>
                 <div class="fact">
-                    <div class="num">5+ anni</div>
-                    <div class="label">di sviluppo sul campo</div>
+                    <div class="num" data-i18n="about.fact2.num">5+ anni</div>
+                    <div class="label" data-i18n="about.fact2">di sviluppo sul campo</div>
                 </div>
                 <div class="fact">
                     <div class="num">30+</div>
-                    <div class="label">progetti realizzati, tra lavoro e passione</div>
+                    <div class="label" data-i18n="about.fact3">progetti realizzati, tra lavoro e passione</div>
                 </div>
             </div>
         </div>
@@ -265,7 +286,7 @@
     <section id="skills">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow">competenze</div>
+                <div class="eyebrow" data-i18n="skills.eyebrow">competenze</div>
                 <h2 class="section-title">Skills</h2>
             </div>
 
@@ -277,13 +298,13 @@
 
                 <div class="ide-tree" id="skillTree">
                     <div class="tree-group">
-                        <div class="tree-label">Linguaggi &amp; Framework</div>
+                        <div class="tree-label" data-i18n="skills.group.lang">Linguaggi &amp; Framework</div>
                         <div class="tree-item active" data-target="skill-java"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)"><path d="M6 13h9v3.5a2.5 2.5 0 0 1-2.5 2.5h-4a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M15 14h1.5a2 2 0 0 1 0 4H15"/><path d="M8.5 4.5c-.8.8-.8 1.7 0 2.5M11.5 4.5c-.8.8-.8 1.7 0 2.5"/></svg>Java</div>
                         <div class="tree-item" data-target="skill-web"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><polyline points="8 8 4 12 8 16"/><polyline points="16 8 20 12 16 16"/><line x1="13.5" y1="6" x2="10.5" y2="18"/></svg>Web (HTML/CSS/JS)</div>
                         <div class="tree-item" data-target="skill-node"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" style="color:var(--red)"><path d="M12 2.5 20 7v10l-8 4.5L4 17V7z"/></svg>Node.js</div>
                     </div>
                     <div class="tree-group">
-                        <div class="tree-label">Strumenti</div>
+                        <div class="tree-label" data-i18n="skills.group.tools">Strumenti</div>
                         <div class="tree-item" data-target="skill-ide"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9h18"/><path d="M8 12.5l2 2-2 2"/><path d="M12.5 16.5H16"/></svg>IDE &amp; Editor</div>
                         <div class="tree-item" data-target="skill-claude"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="color:var(--amber)"><path d="M12 2.5v6M12 15.5v6M2.5 12h6M15.5 12h6M5.3 5.3l4.2 4.2M14.5 14.5l4.2 4.2M5.3 18.7l4.2-4.2M14.5 9.5l4.2-4.2"/></svg>Claude Code</div>
                         <div class="tree-item" data-target="skill-db"><svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>Database</div>
@@ -296,37 +317,37 @@
 
                     <div class="skill-block active" id="skill-java">
                         <h3>Java</h3>
-                        <div class="lvl-line"><span class="lvl-tag expert">Esperienza dal 2021</span></div>
-                        <p>Il mio linguaggio principale. Lavoro da anni su <strong>plugin Bukkit/Spigot</strong> per
+                        <div class="lvl-line"><span class="lvl-tag expert" data-i18n="skill.java.lvl">Esperienza dal 2021</span></div>
+                        <p data-i18n="skill.java.p">Il mio linguaggio principale. Lavoro da anni su <strong>plugin Bukkit/Spigot</strong> per
                             Minecraft e su <strong>bot Discord</strong> personalizzati costruiti con la libreria
                             <strong>JDA</strong>.
                         </p>
                         <ul>
-                            <li><strong>Lombok annotations</strong> e <strong>Sql2o</strong> - librerie che uso regolarmente</li>
-                            <li><strong>Hibernate</strong>, <strong>Spring / Spring Boot</strong> - ancora alle prime
-                                armi, ma l'approccio è simile a come già strutturo plugin e database, quindi la curva 
+                            <li data-i18n="skill.java.li1"><strong>Lombok annotations</strong> e <strong>Sql2o</strong> - librerie che uso regolarmente</li>
+                            <li data-i18n="skill.java.li2"><strong>Hibernate</strong>, <strong>Spring / Spring Boot</strong> - ancora alle prime
+                                armi, ma l'approccio è simile a come già strutturo plugin e database, quindi la curva
                                 di apprendimento è breve</li>
                         </ul>
                     </div>
 
                     <div class="skill-block" id="skill-web">
                         <h3>Web Development</h3>
-                        <div class="lvl-line"><span class="lvl-tag solid">Solida</span></div>
-                        <p>Oltre a <strong>HTML, CSS e JavaScript</strong> nativi, lavoro con framework PHP
+                        <div class="lvl-line"><span class="lvl-tag solid" data-i18n="skill.web.lvl">Solida</span></div>
+                        <p data-i18n="skill.web.p">Oltre a <strong>HTML, CSS e JavaScript</strong> nativi, lavoro con framework PHP
                             professionali e librerie di stile moderne.</p>
                         <ul>
-                            <li><strong>Laravel</strong> e <strong>CodeIgniter</strong> per il back-end</li>
-                            <li><strong>Tailwind CSS</strong> e altre librerie di stile per il front-end</li>
+                            <li data-i18n="skill.web.li1"><strong>Laravel</strong> e <strong>CodeIgniter</strong> per il back-end</li>
+                            <li data-i18n="skill.web.li2"><strong>Tailwind CSS</strong> e altre librerie di stile per il front-end</li>
                         </ul>
                     </div>
 
                     <div class="skill-block" id="skill-node">
                         <h3>Node.js</h3>
-                        <div class="lvl-line"><span class="lvl-tag learning">Competenza datata</span></div>
-                        <p>Usato in passato per bot Discord e Telegram — competenze che oggi considero quasi dimenticate
+                        <div class="lvl-line"><span class="lvl-tag learning" data-i18n="skill.node.lvl">Competenza datata</span></div>
+                        <p data-i18n="skill.node.p">Usato in passato per bot Discord e Telegram — competenze che oggi considero quasi dimenticate
                             su quel fronte specifico.</p>
                         <ul>
-                            <li>Attualmente usato nel progetto attivo <a href="https://glitchvalley.it" target="_blank"
+                            <li data-i18n="skill.node.li1">Attualmente usato nel progetto attivo <a href="https://glitchvalley.it" target="_blank"
                                     style="color:var(--amber);">glitchvalley.it</a>, insieme a Laravel, npm e Tailwind
                                 CSS</li>
                         </ul>
@@ -334,58 +355,58 @@
 
                     <div class="skill-block" id="skill-ide">
                         <h3>IDE &amp; Editor</h3>
-                        <div class="lvl-line"><span class="lvl-tag expert">Uso professionale quotidiano</span></div>
-                        <p>Abbonato a tutti i servizi JetBrains, anche se uso attivamente solo quelli che mi servono
+                        <div class="lvl-line"><span class="lvl-tag expert" data-i18n="skill.ide.lvl">Uso professionale quotidiano</span></div>
+                        <p data-i18n="skill.ide.p">Abbonato a tutti i servizi JetBrains, anche se uso attivamente solo quelli che mi servono
                             davvero.</p>
                         <ul>
-                            <li><strong>IntelliJ IDEA Ultimate</strong> — il mio IDE principale per Java</li>
-                            <li><strong>PhpStorm</strong> — per i progetti web/PHP</li>
-                            <li><strong>VS Code</strong> — editor leggero per modifiche rapide, ad es. file di
+                            <li data-i18n="skill.ide.li1"><strong>IntelliJ IDEA Ultimate</strong> — il mio IDE principale per Java</li>
+                            <li data-i18n="skill.ide.li2"><strong>PhpStorm</strong> — per i progetti web/PHP</li>
+                            <li data-i18n="skill.ide.li3"><strong>VS Code</strong> — editor leggero per modifiche rapide, ad es. file di
                                 configurazione</li>
-                            <li>Conosco anche <strong>Eclipse</strong>, ma trovo IntelliJ decisamente più professionale
+                            <li data-i18n="skill.ide.li4">Conosco anche <strong>Eclipse</strong>, ma trovo IntelliJ decisamente più professionale
                             </li>
                         </ul>
                     </div>
 
                     <div class="skill-block" id="skill-db">
                         <h3>Database</h3>
-                        <div class="lvl-line"><span class="lvl-tag solid">Buona, non da esperto</span></div>
-                        <p>Lavoro principalmente con <strong>MySQL</strong> e <strong>SQLite</strong>, quest'ultimo il
+                        <div class="lvl-line"><span class="lvl-tag solid" data-i18n="skill.db.lvl">Buona, non da esperto</span></div>
+                        <p data-i18n="skill.db.p">Lavoro principalmente con <strong>MySQL</strong> e <strong>SQLite</strong>, quest'ultimo il
                             più usato. Conosco le query essenziali necessarie nei progetti tipo plugin Bukkit, non
                             l'intero linguaggio SQL.</p>
                         <ul>
-                            <li><strong>MySQL</strong> e <strong>SQLite</strong> — uso quotidiano</li>
-                            <li><strong>SQL Server</strong> — conoscenza di base</li>
+                            <li data-i18n="skill.db.li1"><strong>MySQL</strong> e <strong>SQLite</strong> — uso quotidiano</li>
+                            <li data-i18n="skill.db.li2"><strong>SQL Server</strong> — conoscenza di base</li>
                         </ul>
                     </div>
 
                     <div class="skill-block" id="skill-docker">
                         <h3>Docker</h3>
-                        <div class="lvl-line"><span class="lvl-tag solid">Esperienza pratica</span></div>
-                        <p>Per lo sviluppo quotidiano preferisco un ambiente <strong>Ubuntu via WSL</strong>, ma so
+                        <div class="lvl-line"><span class="lvl-tag solid" data-i18n="skill.docker.lvl">Esperienza pratica</span></div>
+                        <p data-i18n="skill.docker.p">Per lo sviluppo quotidiano preferisco un ambiente <strong>Ubuntu via WSL</strong>, ma so
                             creare e gestire container Docker quando un progetto richiede librerie o versioni software
                             diverse da quelle già installate sul sistema.</p>
                     </div>
 
                     <div class="skill-block" id="skill-git">
                         <h3>Git &amp; Version control</h3>
-                        <div class="lvl-line"><span class="lvl-tag solid">Uso quotidiano</span></div>
-                        <p>Uso Git quotidianamente in tutti i miei progetti. Il mio GitHub 
-                            pubblico fornito contiene principalmente progetti per divertimento 
-                            e portfolio, ogni cosa che vedi è intenzionalmente pubblica per mostrare 
+                        <div class="lvl-line"><span class="lvl-tag solid" data-i18n="skill.git.lvl">Uso quotidiano</span></div>
+                        <p data-i18n="skill.git.p1">Uso Git quotidianamente in tutti i miei progetti. Il mio GitHub
+                            pubblico fornito contiene principalmente progetti per divertimento
+                            e portfolio, ogni cosa che vedi è intenzionalmente pubblica per mostrare
                             il mio work style.</p>
-                        
-                        <p>I veri progetti su cui lavoro sono spesso under NDA (non-disclosure agreement),
+
+                        <p data-i18n="skill.git.p2">I veri progetti su cui lavoro sono spesso under NDA (non-disclosure agreement),
                             quindi ospitati su repository private. Ho veramente tanti progetti sviluppati.</p>
                     </div>
 
                     <div class="skill-block" id="skill-claude">
                         <h3>Claude Code</h3>
-                        <div class="lvl-line"><span class="lvl-tag solid">Uso quotidiano</span></div>
-                        <p>Assistente di sviluppo AI di <strong>Anthropic</strong>, lo uso direttamente da terminale
+                        <div class="lvl-line"><span class="lvl-tag solid" data-i18n="skill.claude.lvl">Uso quotidiano</span></div>
+                        <p data-i18n="skill.claude.p">Assistente di sviluppo AI di <strong>Anthropic</strong>, lo uso direttamente da terminale
                             come supporto per scrivere codice, fare refactoring e velocizzare il lavoro</p>
                         <ul>
-                            <li><strong>Pair programming</strong> per sviluppo e debugging più rapidi</li>
+                            <li data-i18n="skill.claude.li1"><strong>Pair programming</strong> per sviluppo e debugging più rapidi</li>
                         </ul>
                     </div>
 
@@ -397,29 +418,29 @@
     <section id="services">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow">cosa posso fare</div>
-                <h2 class="section-title">Servizi</h2>
+                <div class="eyebrow" data-i18n="services.eyebrow">cosa posso fare</div>
+                <h2 class="section-title" data-i18n="services.title">Servizi</h2>
             </div>
             <div class="svc-grid">
                 <div class="svc-card">
                     <div class="svc-num">01</div>
                     <h3>Plugin Bukkit/Spigot</h3>
-                    <p>Plugin custom e ottimizzati per server Minecraft, su misura per le esigenze del tuo server.</p>
-                    <a href="https://www.fiverr.com/s/5qKRrb" target="_blank" class="svc-link">Scopri di più →</a>
+                    <p data-i18n="svc1.p">Plugin custom e ottimizzati per server Minecraft, su misura per le esigenze del tuo server.</p>
+                    <a href="https://www.fiverr.com/s/5qKRrb" target="_blank" class="svc-link" data-i18n="svc.more">Scopri di più →</a>
                 </div>
                 <div class="svc-card">
                     <div class="svc-num">02</div>
-                    <h3>Bot Discord</h3>
-                    <p>Bot Discord personalizzati: moderazione, intrattenimento o gestione community, costruiti su
+                    <h3 data-i18n="svc2.title">Bot Discord</h3>
+                    <p data-i18n="svc2.p">Bot Discord personalizzati: moderazione, intrattenimento o gestione community, costruiti su
                         misura.</p>
-                    <a href="https://www.fiverr.com/s/Z3xWmY" target="_blank" class="svc-link">Scopri di più →</a>
+                    <a href="https://www.fiverr.com/s/Z3xWmY" target="_blank" class="svc-link" data-i18n="svc.more">Scopri di più →</a>
                 </div>
                 <div class="svc-card">
                     <div class="svc-num">03</div>
-                    <h3>Siti web completi</h3>
-                    <p>Realizzo siti con una grafica accurata e intuitiva, sistemi di gestione database 
+                    <h3 data-i18n="svc3.title">Siti web completi</h3>
+                    <p data-i18n="svc3.p">Realizzo siti con una grafica accurata e intuitiva, sistemi di gestione database
                         puliti e funzionali (login/registrazione, conversazioni...)</p>
-                    <a href="#" class="svc-link disabled">In arrivo</a>
+                    <a href="#" class="svc-link disabled" data-i18n="svc.soon">In arrivo</a>
                 </div>
             </div>
         </div>
@@ -428,7 +449,7 @@
     <section id="server">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow">progetti</div>
+                <div class="eyebrow" data-i18n="server.eyebrow">progetti</div>
                 <h2 class="section-title">EndlessHorizons Network</h2>
             </div>
             <div class="server-showcase">
@@ -441,23 +462,40 @@
                             <span class="stat-val stat-mono">glitchvalley.it</span>
                         </div>
                         <div class="server-stat">
-                            <span class="stat-label">Versioni</span>
+                            <span class="stat-label" data-i18n="server.versions">Versioni</span>
                             <span class="stat-val">1.16.4 – 1.21.3</span>
                         </div>
                         <div class="server-stat">
-                            <span class="stat-label">Modalità</span>
+                            <span class="stat-label" data-i18n="server.mode">Modalità</span>
                             <span class="stat-val">RolePlay</span>
                         </div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <p><strong>EndlessHorizons Network</strong> è un server Minecraft <strong>RolePlay</strong> open-world, dove i
+                    <p data-i18n="server.p1"><strong>EndlessHorizons Network</strong> è un server Minecraft <strong>RolePlay</strong> open-world, dove i
                         giocatori simulano la vita reale e la vivono come preferiscono. Lo porto avanti come <strong>CEO e Project
-                            Manager dello sviluppo</strong>, insieme a un team appassionato sparso per l'Italia.</p>
-                    <p>Dietro le quinte ci sono <strong>plugin Bukkit custom in Java</strong> e il sito ufficiale
+                            Manager dello sviluppo</strong>, insieme a <strong>Kyrolos Ebrahem</strong> (<strong>Lead Developer</strong>) e un team appassionato sparso per l'Italia.</p>
+                    <p data-i18n="server.p2">Dietro le quinte ci sono <strong>plugin Bukkit custom in Java</strong> e il sito ufficiale
                         <strong>glitchvalley.it</strong> (Laravel, Node.js, Tailwind). È qui che vive il mio vero <strong>codice
                             sorgente</strong> (privato e curato) mentre il mio Git pubblico è solo per divertimento.</p>
-                    <a href="https://glitchvalley.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary server-btn">Visita glitchvalley.it →</a>
+                    <a href="https://glitchvalley.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary server-btn" data-i18n="server.btn">Visita glitchvalley.it →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaborators">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="eyebrow" data-i18n="collab.eyebrow">collaborazione</div>
+                <h2 class="section-title" data-i18n="collab.title">Featured Collaborator</h2>
+            </div>
+            <div class="collab-card">
+                <div class="collab-content">
+                    <h3 data-i18n="collab.name">Kyrolos Ebrahem</h3>
+                    <p class="collab-role" data-i18n="collab.role">Lead Developer, EndlessHorizons Network</p>
+                    <p data-i18n="collab.desc">Sviluppatore senior e creativo, co-architetto tecnico di EHN. Competente in backend, design e sviluppo full-stack.</p>
+                    <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="collab.visit">Visita il portfolio →</a>
                 </div>
             </div>
         </div>
@@ -466,12 +504,12 @@
     <section id="contact">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow">parliamone</div>
-                <h2 class="section-title">Contattami</h2>
+                <div class="eyebrow" data-i18n="contact.eyebrow">parliamone</div>
+                <h2 class="section-title" data-i18n="contact.title">Contattami</h2>
             </div>
             <div class="contact-grid">
                 <div>
-                    <p class="intro">Hai un progetto in mente o vuoi semplicemente scambiare due chiacchiere? Scrivimi,
+                    <p class="intro" data-i18n="contact.intro">Hai un progetto in mente o vuoi semplicemente scambiare due chiacchiere? Scrivimi,
                         ti risponderò appena possibile.</p>
                     <div class="contact-row">
                         <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -506,18 +544,18 @@
                 </div>
                 <form class="contact-form" name="submit-to-google-sheet" id="contactForm">
                     <div class="field">
-                        <label for="cf-name">Nome</label>
-                        <input id="cf-name" type="text" name="Name" placeholder="Il tuo nome" required>
+                        <label for="cf-name" data-i18n="contact.label.name">Nome</label>
+                        <input id="cf-name" type="text" name="Name" placeholder="Il tuo nome" data-i18n-placeholder="contact.ph.name" required>
                     </div>
                     <div class="field">
-                        <label for="cf-email">Email</label>
-                        <input id="cf-email" type="email" name="Email" placeholder="latua@email.com" required>
+                        <label for="cf-email" data-i18n="contact.label.email">Email</label>
+                        <input id="cf-email" type="email" name="Email" placeholder="latua@email.com" data-i18n-placeholder="contact.ph.email" required>
                     </div>
                     <div class="field">
-                        <label for="cf-msg">Messaggio</label>
-                        <textarea id="cf-msg" name="Message" placeholder="Raccontami del tuo progetto..."></textarea>
+                        <label for="cf-msg" data-i18n="contact.label.msg">Messaggio</label>
+                        <textarea id="cf-msg" name="Message" placeholder="Raccontami del tuo progetto..." data-i18n-placeholder="contact.ph.msg"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" disabled>Invia
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="contact.submit" disabled>Invia
                         messaggio</button>
                 </form>
             </div>
@@ -525,10 +563,17 @@
     </section>
 
     <footer>
-        <div class="wrap">© <span id="year"></span> CodeWithFil — tutti i diritti riservati<span class="version-tag" id="versionTag"></span></div>
+        <div class="wrap">
+            <div>© <span id="year"></span> CodeWithFil — <span data-i18n="footer.rights">tutti i diritti riservati</span><span class="version-tag" id="versionTag"></span></div>
+            <div class="footer-partner"><span data-i18n="footer.collab">Collaborating with</span> <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer">Kyrolos Ebrahem</a></div>
+        </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <!-- i18n: prima il motore, poi i moduli lingua (ordine = ordine nel menu), poi gli script del sito -->
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/i18n/it.js"></script>
+    <script src="./assets/js/i18n/en.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
 

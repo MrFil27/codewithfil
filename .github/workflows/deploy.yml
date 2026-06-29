@@ -29,7 +29,15 @@ jobs:
 
       - name: Prepare website and generate version.json
         run: |
-          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.1.$(git rev-list --count HEAD)")
+          # Versione = base dell'ultimo tag + numero di commit fatti DA quel tag.
+          # Es: tag v1.0.0, 3 commit dopo -> v1.0.3. Sul commit del tag stesso -> v1.0.0.
+          if LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null); then
+            COMMITS_SINCE=$(git rev-list "${LATEST_TAG}..HEAD" --count)
+            BASE="${LATEST_TAG%.*}"
+            VERSION="${BASE}.${COMMITS_SINCE}"
+          else
+            VERSION="v0.1.$(git rev-list --count HEAD)"
+          fi
           DATE=$(git log -1 --format=%cd --date=format:'%Y-%m-%d')
           COMMIT=$(git rev-parse --short HEAD)
           mkdir -p _site

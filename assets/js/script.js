@@ -1,3 +1,40 @@
+// ----- hero role: effetto macchina da scrivere -----
+// I ruoli arrivano dal modulo della lingua attiva (I18N.onChange): l'animazione
+// si riavvia da sola ad ogni cambio lingua. Fallback no-JS: il testo statico
+// già presente in #roleText.
+(function () {
+    const el = document.getElementById('roleText');
+    if (!el || !window.I18N || typeof window.I18N.onChange !== 'function') return;
+
+    const TYPE = 75, ERASE = 40, HOLD = 1500, GAP = 350;
+    let roles = [], idx = 0, char = 0, deleting = false, timer = null;
+
+    function tick() {
+        const word = roles[idx] || '';
+        if (!deleting) {
+            char++;
+            el.textContent = word.slice(0, char);
+            if (char >= word.length) { deleting = true; timer = setTimeout(tick, HOLD); return; }
+            timer = setTimeout(tick, TYPE);
+        } else {
+            char--;
+            el.textContent = word.slice(0, char);
+            if (char <= 0) { deleting = false; idx = (idx + 1) % roles.length; timer = setTimeout(tick, GAP); return; }
+            timer = setTimeout(tick, ERASE);
+        }
+    }
+
+    function start(newRoles) {
+        clearTimeout(timer);
+        roles = (Array.isArray(newRoles) && newRoles.length) ? newRoles.slice() : [el.textContent].filter(Boolean);
+        idx = 0; char = 0; deleting = false;
+        el.textContent = '';
+        if (roles.length) tick();
+    }
+
+    window.I18N.onChange(cfg => start(cfg && cfg.roles));
+})();
+
 // ----- mobile nav toggle -----
 const navlinks = document.getElementById('navlinks');
 const navtoggle = document.getElementById('navtoggle');
