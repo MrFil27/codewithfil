@@ -12,17 +12,6 @@ window.I18N.register('it', {
     base: true,
     // Ruoli che scorrono nel sottotitolo dell'hero (effetto macchina da scrivere).
     roles: ['Java developer', 'Backend developer', 'Modeler & texturer'],
-    // Stringhe di elementi aggiunti successivamente (sezione collaboratori, footer).
-    // L'italiano le legge dal markup, ma sono necessarie per evitare fallback.
-    strings: {
-        'collab.eyebrow': 'collaborazione',
-        'collab.title': 'Featured Collaborator',
-        'collab.name': 'KyremWorks',
-        'collab.role': 'Lead Developer, EndlessHorizons Network',
-        'collab.desc': 'Sviluppatore senior e creativo. Co-architetto tecnico di EHN. Collaboriamo su diversi progetti privati oltre al server.',
-        'collab.visit': 'Visita il portfolio →',
-        'footer.collab': 'Collaborando con'
-    },
     meta: {
         htmlLang: 'it',
         title: 'CodeWithFil — Java & Web Developer | Portfolio',
