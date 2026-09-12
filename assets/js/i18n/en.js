@@ -19,6 +19,7 @@ window.I18N.register('en', {
     },
     strings: {
         // ---- Navbar ----
+        'nav.code': 'Code',
         'nav.services': 'Services',
         'nav.contact': 'Contact',
         'aria.menu': 'Open menu',
@@ -79,6 +80,11 @@ window.I18N.register('en', {
         'skill.claude.lvl': 'Productivity tool',
         'skill.claude.p': 'An AI development assistant by <strong>Anthropic</strong>. I use it from the terminal to speed up refactoring, debugging and repetitive tasks — an extra productivity tool, while the logic and the decisions stay mine.',
         'skill.claude.li1': '<strong>Pair programming</strong> for faster development and debugging',
+
+        // ---- Code showcase ----
+        'code.eyebrow': 'real code',
+        'code.title': 'Real code',
+        'code.intro': 'Not demos, but real fragments pulled from my private projects — Bukkit plugins and the EndlessHorizons Network. Hover to pause the scroll.',
 
         // ---- Services ----
         'services.eyebrow': 'what i can do',
