@@ -16,7 +16,7 @@
     --mono: "JetBrains Mono", monospace;
     --sans: "Inter", sans-serif;
     --radius: 8px;
-    --maxw: 1100px;
+    --maxw: 1160px;
 }
 
 * {
@@ -40,6 +40,10 @@ body {
     background-attachment: fixed;
 }
 
+[id] {
+    scroll-margin-top: 84px;
+}
+
 ::selection {
     background: var(--green-soft);
     color: var(--green);
@@ -54,22 +58,6 @@ a {
     max-width: var(--maxw);
     margin: 0 auto;
     padding: 0 28px;
-}
-
-.eyebrow {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--green);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-    letter-spacing: 0.02em;
-}
-
-.eyebrow::before {
-    content: "//";
-    color: var(--text-faint);
 }
 
 /* ===== Scrollbar ===== */
@@ -292,10 +280,7 @@ nav {
 
 /* ===== HERO ===== */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
+    padding: 130px 0 64px;
     position: relative;
     overflow: hidden;
 }
@@ -546,45 +531,136 @@ nav {
     margin-bottom: 0;
 }
 
-/* ===== SECTION GENERIC ===== */
-section {
-    padding: 110px 0;
+/* ===== BENTO DASHBOARD ===== */
+/* Tutto il contenuto dopo l'hero vive in un'unica griglia a 12 colonne:
+   ogni blocco è una card indipendente ("widget") con la sua ampiezza
+   (span-N), invece delle vecchie fasce full-width impilate una sull'altra. */
+.bento {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 22px;
+    padding: 70px 0 110px;
 }
 
-.section-head {
-    margin-bottom: 56px;
+.bento-item {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 26px;
 }
 
-.section-title {
+/* riga di apertura di un gruppo: solo testo, nessuna card */
+.bento-label {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+}
+
+.bento-label:first-child {
+    margin-top: 0;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
+
+.span-6 {
+    grid-column: span 6;
+}
+
+.span-7 {
+    grid-column: span 7;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+.span-12 {
+    grid-column: 1 / -1;
+}
+
+.card-kicker {
     font-family: var(--mono);
-    font-size: clamp(26px, 3.4vw, 36px);
+    font-size: 12.5px;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.card-kicker::before {
+    content: "//";
+    color: var(--text-faint);
+}
+
+.card-title {
+    font-family: var(--mono);
+    font-size: clamp(19px, 2.1vw, 25px);
     font-weight: 700;
     color: #fff;
 }
 
-/* ===== ABOUT ===== */
-#about {
-    border-top: 1px solid var(--border);
+.bento-item>.card-title {
+    margin-bottom: 20px;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 56px;
-    align-items: start;
+/* card che si comportano da tile cliccabile (servizi, progetti EHN, personali, collaboratore) */
+.tile-card {
+    transition: transform .2s, border-color .2s;
 }
 
-.avatar-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
+.tile-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--green);
+}
+
+/* paragrafi "lunghi" (about, intro progetti) */
+.body-text p {
+    color: var(--text);
+    font-size: 15.5px;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.body-text p:last-child {
+    margin-bottom: 0;
+}
+
+.body-text strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+@media (max-width: 980px) {
+    .bento {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .span-4,
+    .span-5,
+    .span-6,
+    .span-7,
+    .span-8 {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ===== ABOUT (profilo) ===== */
+.profile-card {
     text-align: center;
 }
 
 .avatar-ring {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto 20px;
     border-radius: 50%;
     border: 1px solid var(--border);
@@ -604,32 +680,21 @@ section {
     opacity: .4;
 }
 
-
-.avatar-card h3 {
+.profile-card h3 {
     font-family: var(--mono);
     color: #fff;
     font-size: 17px;
     margin-bottom: 6px;
 }
 
-.avatar-card .role {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 12px;
-}
-
-.avatar-card .meta-line {
+.profile-card .meta-line {
     font-family: var(--mono);
     font-size: 12.5px;
     color: var(--text-faint);
     line-height: 1.5;
 }
 
-.avatar-card .meta-line:first-of-type {
-    margin-top: 12px;
-}
-
-.avatar-card .slogan {
+.profile-card .slogan {
     margin-top: 14px;
     font-size: 12.5px;
     font-style: italic;
@@ -657,25 +722,9 @@ section {
     background: var(--green);
 }
 
-.about-text p {
-    color: var(--text);
-    margin-bottom: 18px;
-    font-size: 15.5px;
-}
-
-.about-text strong {
-    color: #fff;
-    font-weight: 600;
-}
-
 /* ===== SKILLS - IDE EXPLORER STYLE ===== */
-#skills {
-    border-top: 1px solid var(--border);
-    background: var(--bg-soft);
-}
-
 .ide {
-    background: var(--surface);
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -875,15 +924,11 @@ section {
 }
 
 /* ===== TECH STACK: scorrimento icone linguaggi/framework/strumenti ===== */
-#stack {
-    border-top: 1px solid var(--border);
-}
-
 .tech-carousel {
-    margin-top: 8px;
+    margin: 4px -26px -4px;
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 
 .tech-track {
@@ -922,7 +967,7 @@ section {
     width: 52px;
     height: 52px;
     border-radius: 12px;
-    background: var(--surface);
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -973,15 +1018,14 @@ section {
 .code-intro {
     color: var(--text-dim);
     max-width: 620px;
-    margin: -30px auto 0;
-    text-align: center;
+    margin-bottom: 24px;
 }
 
 .code-carousel {
-    margin-top: 48px;
+    margin: 0 -26px -4px;
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 
 .code-track {
@@ -989,7 +1033,7 @@ section {
     align-items: flex-start;
     gap: 28px;
     width: max-content;
-    padding: 0 28px;
+    padding: 4px 28px;
     animation: codeScroll 55s linear infinite;
 }
 
@@ -1010,7 +1054,7 @@ section {
 .code-window {
     flex: 0 0 auto;
     width: min(480px, 86vw);
-    background: var(--surface);
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -1040,51 +1084,29 @@ section {
     }
 }
 
-/* ===== SERVICES ===== */
-#services {
-    border-top: 1px solid var(--border);
-}
-
-.svc-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.svc-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 30px 26px;
-    transition: transform .25s, border-color .25s;
-}
-
-.svc-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--green);
-}
-
-.svc-num {
+/* ===== TILE CARDS: servizi, progetti EHN, progetto personale ===== */
+.tile-num {
     font-family: var(--mono);
     font-size: 12px;
     color: var(--text-faint);
     margin-bottom: 16px;
 }
 
-.svc-card h3 {
+.tile-title {
     font-family: var(--mono);
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.svc-card p {
-    font-size: 14px;
+.tile-text {
+    font-size: 13.5px;
     color: var(--text-dim);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    line-height: 1.55;
 }
 
-.svc-card a.svc-link {
+.tile-link {
     font-family: var(--mono);
     font-size: 13px;
     color: var(--green);
@@ -1093,29 +1115,36 @@ section {
     gap: 6px;
 }
 
-.svc-card a.svc-link.disabled {
+.tile-link.disabled {
     color: var(--text-faint);
     pointer-events: none;
 }
 
-/* ===== PROJECTS: EndlessHorizons Network + progetti personali ===== */
-#projects {
-    border-top: 1px solid var(--border);
-    background: var(--bg-soft);
+.tile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
-.server-showcase {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 48px;
-    align-items: start;
-}
-
-.server-logo-card {
-    background: var(--surface);
+.tile-tags span {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 3px 9px;
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 24px;
+    border-radius: 100px;
+    color: var(--text-faint);
+}
+
+.proj-signed .proj-signature {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+    font-style: italic;
+}
+
+/* ===== PROJECTS: logo/stat card EHN ===== */
+.logo-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1166,106 +1195,8 @@ section {
     word-break: break-all;
 }
 
-.server-info p {
-    color: var(--text);
-    font-size: 15.5px;
-    margin-bottom: 16px;
-    line-height: 1.7;
-}
-
-.server-info strong {
-    color: #fff;
-    font-weight: 600;
-}
-
-.server-btn {
-    display: inline-flex;
-}
-
-.subsection-title {
-    font-family: var(--mono);
-    font-size: 15px;
-    color: var(--text-faint);
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    margin: 64px 0 24px;
-}
-
-.proj-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.proj-grid.proj-grid-personal {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.proj-grid.proj-grid-personal .proj-card {
-    flex: 0 1 320px;
-}
-
-.proj-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 24px 22px;
-    transition: transform .25s, border-color .25s;
-}
-
-.proj-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--green);
-}
-
-.proj-card h4 {
-    font-family: var(--mono);
-    font-size: 15.5px;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.proj-card p {
-    font-size: 13.5px;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    line-height: 1.55;
-}
-
-.proj-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.proj-tags span {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 3px 9px;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    color: var(--text-faint);
-}
-
-.proj-card.proj-signed .proj-signature {
-    margin-top: 4px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--text-faint);
-    font-style: italic;
-}
-
-/* ===== COLLABORATORS ===== */
-#collaborators {
-    border-top: 1px solid var(--border);
-}
-
+/* ===== COLLABORATOR ===== */
 .collab-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px;
     display: flex;
     align-items: center;
     gap: 28px;
@@ -1273,8 +1204,8 @@ section {
 
 .collab-avatar {
     flex-shrink: 0;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--green);
@@ -1315,18 +1246,7 @@ section {
 }
 
 /* ===== CONTACT ===== */
-#contact {
-    border-top: 1px solid var(--border);
-    background: var(--bg-soft);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-}
-
-.contact-grid p.intro {
+.contact-intro {
     color: var(--text-dim);
     margin-bottom: 26px;
     font-size: 15.5px;
@@ -1374,13 +1294,6 @@ section {
 .social-btn svg {
     width: 19px;
     height: 19px;
-}
-
-.contact-form {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 28px;
 }
 
 .field {
@@ -1495,10 +1408,6 @@ footer a:hover {
         gap: 40px;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
     .ide {
         grid-template-columns: 1fr;
     }
@@ -1534,26 +1443,9 @@ footer a:hover {
         border-left: none;
     }
 
-    .svc-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .server-showcase {
-        grid-template-columns: 1fr;
-    }
-
-    .server-logo-card {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .proj-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .collab-card {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
@@ -1580,7 +1472,7 @@ footer a:hover {
         display: flex;
     }
 
-    section {
-        padding: 70px 0;
+    .bento-item {
+        padding: 24px 20px;
     }
 }
