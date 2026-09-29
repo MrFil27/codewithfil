@@ -14,13 +14,14 @@ window.I18N.register('en', {
     roles: ['Java developer', 'Backend developer', 'Modeler & texturer'],
     meta: {
         htmlLang: 'en',
-        title: 'CodeWithFil — Java & Web Developer | Portfolio',
+        title: 'CodeWithFil - Java & Web Developer | Portfolio',
         description: 'Java and Web developer. Bukkit plugins, Discord bots, web applications with Laravel and Spring Boot. 6+ years of experience in backend and Minecraft development.'
     },
     strings: {
         // ---- Navbar ----
         'nav.code': 'Code',
         'nav.services': 'Services',
+        'nav.projects': 'Projects',
         'nav.contact': 'Contact',
         'aria.menu': 'Open menu',
         'aria.lang': 'Change language',
@@ -36,7 +37,7 @@ window.I18N.register('en', {
         'about.age': '22 years old',
         'about.slogan': 'Curiosity is my favourite language!',
         'about.p1': 'There was a time when the word <strong>"developer"</strong> meant nothing to me. I stumbled across it by chance in an online community, sitting next to someone\'s name like a noble title. "And what does that one do?". I got an answer that, I\'ll admit, didn\'t clear much up, but it was enough to send me down the rabbit hole. I never climbed back out: today that mysterious word is simply my craft. My name is Filippo, and I\'m a Java and Web developer.',
-        'about.p2': 'What excites me isn\'t just writing code, but watching something real take shape from an idea: taking a problem, breaking it down and watching the pieces fall into place until everything works. I\'m a <strong>curious soul by nature</strong>: I\'m fascinated by the universe and, more broadly, by anything that makes me wonder <em>how things work</em> — ultimately the same question that keeps me in front of the screen.',
+        'about.p2': 'What excites me isn\'t just writing code, but watching something real take shape from an idea: taking a problem, breaking it down and watching the pieces fall into place until everything works. I\'m a <strong>curious soul by nature</strong>: I\'m fascinated by the universe and, more broadly, by anything that makes me wonder <em>how things work</em> - ultimately the same question that keeps me in front of the screen.',
         'about.p3': 'I consider myself a <strong>Mid-Level</strong> developer: most of what I know I taught myself, building real projects and getting them wrong until they worked. I\'m now consolidating these skills with an <strong>ITS Umbria course in IT</strong> which, together with my first work experiences, is helping me find my footing in the industry as a developer, as well as shaping the personal projects I show below.',
 
         // ---- Skills ----
@@ -46,8 +47,8 @@ window.I18N.register('en', {
 
         'skill.java.lvl': 'Experience since 2021',
         'skill.java.p': 'My main language. For years I\'ve been working on <strong>Bukkit/Spigot plugins</strong> for Minecraft and custom <strong>Discord bots</strong> built with the <strong>JDA</strong> library.',
-        'skill.java.li1': '<strong>Lombok annotations</strong> and <strong>Sql2o</strong> — libraries I use regularly',
-        'skill.java.li2': '<strong>Hibernate</strong>, <strong>Spring / Spring Boot</strong> — currently consolidating, on solid foundations carried over from plugins and databases, so the learning curve is short',
+        'skill.java.li1': '<strong>Lombok annotations</strong> and <strong>Sql2o</strong> - libraries I use regularly',
+        'skill.java.li2': '<strong>Hibernate</strong>, <strong>Spring / Spring Boot</strong> - currently consolidating, on solid foundations carried over from plugins and databases, so the learning curve is short',
 
         'skill.web.lvl': 'Solid',
         'skill.web.p': 'Beyond native <strong>HTML, CSS and JavaScript</strong>, I work with professional PHP frameworks and modern styling libraries.',
@@ -56,23 +57,23 @@ window.I18N.register('en', {
 
         'skill.node.lvl': 'Currently in use',
         'skill.node.p': 'Currently part of my web stack, and previously used for Discord and Telegram bots.',
-        'skill.node.li1': 'Currently used in the active project <a href="https://glitchvalley.it" target="_blank" style="color:var(--amber);">glitchvalley.it</a>, alongside Laravel, npm and Tailwind CSS',
+        'skill.node.li1': 'Currently used in the active project <a href="https://endlesshorizons.it" target="_blank" style="color:var(--green);">endlesshorizons.it</a>, alongside Laravel, npm and Tailwind CSS',
 
         'skill.flutter.lvl': 'Personal project',
         'skill.flutter.p': 'Google\'s framework for cross-platform apps with <strong>Dart</strong>. I used it to build a full management app, from the interface down to the backend connection.',
-        'skill.flutter.li1': '<strong>Biblioteca Elim Perugia</strong> — a catalogue and loan management app for a library, signed <em>EHN Productions</em>: that\'s just the signature I use on my personal projects, not a freelance business',
+        'skill.flutter.li1': '<strong>Biblioteca Elim Perugia</strong> - a catalogue and loan management app for a library, signed <em>EHN Productions</em>: that\'s just the signature I use on my personal projects, not a freelance business',
 
         'skill.ide.lvl': 'Daily professional use',
         'skill.ide.p': 'Subscribed to every JetBrains service, though I actively use only the ones I really need.',
-        'skill.ide.li1': '<strong>IntelliJ IDEA Ultimate</strong> — my main IDE for Java',
-        'skill.ide.li2': '<strong>PhpStorm</strong> — for web/PHP projects',
-        'skill.ide.li3': '<strong>VS Code</strong> — lightweight editor for quick edits, e.g. configuration files',
+        'skill.ide.li1': '<strong>IntelliJ IDEA Ultimate</strong> - my main IDE for Java',
+        'skill.ide.li2': '<strong>PhpStorm</strong> - for web/PHP projects',
+        'skill.ide.li3': '<strong>VS Code</strong> - lightweight editor for quick edits, e.g. configuration files',
         'skill.ide.li4': 'I also know <strong>Eclipse</strong>, but I find IntelliJ far more professional',
 
         'skill.db.lvl': 'Solid working knowledge',
         'skill.db.p': 'I work mainly with <strong>MySQL</strong> and <strong>SQLite</strong>, the latter being the one I use most. I\'m comfortable with the queries that real projects need, from Bukkit plugins to web apps.',
-        'skill.db.li1': '<strong>MySQL</strong> and <strong>SQLite</strong> — daily use',
-        'skill.db.li2': '<strong>SQL Server</strong> — basic knowledge',
+        'skill.db.li1': '<strong>MySQL</strong> and <strong>SQLite</strong> - daily use',
+        'skill.db.li2': '<strong>SQL Server</strong> - basic knowledge',
 
         'skill.docker.lvl': 'Hands-on experience',
         'skill.docker.p': 'For day-to-day development I prefer an <strong>Ubuntu via WSL</strong> environment, but I can build and manage Docker containers when a project needs libraries or software versions different from those already installed on the system.',
@@ -82,13 +83,16 @@ window.I18N.register('en', {
         'skill.git.p2': 'The real projects I work on are often under NDA (non-disclosure agreement), so they live in private repositories. I\'ve genuinely built a great many projects.',
 
         'skill.claude.lvl': 'Productivity tool',
-        'skill.claude.p': 'An AI development assistant by <strong>Anthropic</strong>. I use it from the terminal to speed up refactoring, debugging and repetitive tasks — an extra productivity tool, while the logic and the decisions stay mine.',
+        'skill.claude.p': 'An AI development assistant by <strong>Anthropic</strong>. I use it from the terminal to speed up refactoring, debugging and repetitive tasks - an extra productivity tool, while the logic and the decisions stay mine.',
         'skill.claude.li1': '<strong>Pair programming</strong> for faster development and debugging',
+
+        // ---- Tech stack ----
+        'stack.eyebrow': 'languages &amp; tools',
 
         // ---- Code showcase ----
         'code.eyebrow': 'real code',
         'code.title': 'Real code',
-        'code.intro': 'Not demos, but real fragments pulled from my private projects — Bukkit plugins and the EndlessHorizons Network. Hover to pause the scroll.',
+        'code.intro': 'Not demos, but real fragments pulled from my private projects - Bukkit plugins and the EndlessHorizons Network. Hover to pause the scroll.',
 
         // ---- Services ----
         'services.eyebrow': 'what i can do',
@@ -101,13 +105,24 @@ window.I18N.register('en', {
         'svc.more': 'Learn more →',
         'svc.soon': 'Coming soon',
 
-        // ---- Server ----
-        'server.eyebrow': 'projects',
-        'server.versions': 'Versions',
-        'server.mode': 'Mode',
-        'server.p1': '<strong>EndlessHorizons Network</strong> is an open-world <strong>RolePlay</strong> Minecraft server, where players simulate real life and live it however they like. I run it as <strong>CEO and development Project Manager</strong>, together with <strong>Kyrolos Ebrahem</strong> (<strong>Lead Developer</strong>) and a passionate team spread across Italy.',
-        'server.p2': 'Behind the scenes there are <strong>custom Bukkit plugins in Java</strong> and the official site <strong>glitchvalley.it</strong> (Laravel, Node.js, Tailwind). This is where my real <strong>source code</strong> lives (private and well looked-after), while my public Git is just for fun.',
-        'server.btn': 'Visit glitchvalley.it →',
+        // ---- Projects ----
+        'projects.eyebrow': 'projects',
+        'projects.versions': 'Versions',
+        'projects.mode': 'Mode',
+        'projects.p1': '<strong>EndlessHorizons Network</strong> is an open-world <strong>RolePlay</strong> Minecraft server, where players simulate real life and live it however they like. I run it as <strong>CEO and development Project Manager</strong>, together with <strong>Kyrolos Ebrahem</strong> (<strong>Lead Developer</strong>) and a passionate team spread across Italy.',
+        'projects.p2': 'Behind the scenes there are <strong>custom Bukkit plugins in Java</strong> and the official site <strong>endlesshorizons.it</strong> (Laravel, Node.js, Tailwind). This is where my real <strong>source code</strong> lives (private and well looked-after), while my public Git is just for fun.',
+        'projects.btn': 'Visit endlesshorizons.it →',
+
+        'projects.ehnHeading': 'What I built for EHN',
+        'projects.ehn1.p': 'EHN\'s official site, built in Laravel: it exposes the API the Minecraft server consumes to keep game and web platform in sync.',
+        'projects.ehn2.p': 'A Bukkit plugin that bridges server and site: it receives requests from the web platform and pushes updates back into the game in real time.',
+        'projects.ehn3.p': 'A plugin for drivable vehicles in the game world (cars, bikes and other rides), integrated with the server\'s economy and permissions.',
+        'projects.ehn4.p': 'A plugin for simulated electronic devices in game: smartphones and appliances players can use in roleplay.',
+        'projects.ehn5.p': 'A plugin for wearable skins and cosmetics, to customise a character\'s look without touching the base skin.',
+
+        'projects.personalHeading': 'Personal projects',
+        'projects.personal1.p': 'A management app for a church library in Perugia: catalogue, loans and members in a complete mobile app.',
+        'projects.personal1.sig': 'Signed EHN Productions - that\'s just the signature I use on my personal projects, not a freelance business',
 
         // ---- Contact ----
         'contact.eyebrow': 'let\'s talk',
