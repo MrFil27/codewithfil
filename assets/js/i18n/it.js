@@ -14,7 +14,7 @@ window.I18N.register('it', {
     roles: ['Java developer', 'Backend developer', 'Modeler & texturer'],
     meta: {
         htmlLang: 'it',
-        title: 'CodeWithFil — Java & Web Developer | Portfolio',
+        title: 'CodeWithFil - Java & Web Developer | Portfolio',
         description: 'Sviluppatore Java e Web. Plugin Bukkit, bot Discord, applicazioni web con Laravel e Spring Boot. 6+ anni di esperienza in sviluppo backend e Minecraft.'
     }
 });

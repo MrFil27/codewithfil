@@ -125,6 +125,82 @@
     setTimeout(() => typeFileName(() => { P = buildProgram(); pi = 0; run(); }), 500);
 })();
 
+// ----- tech stack: scorrimento icone linguaggi/framework/strumenti -----
+// Le icone reali sono SVG locali (assets/img/icons, brand ufficiali). Per le
+// tecnologie senza un'icona pubblica disponibile (Paper, Blade, C#, Oracle,
+// SQL Server, VS Code) si usa un piccolo badge con iniziali colorate al posto
+// dell'icona, mantenendo lo stesso layout del riquadro.
+(function () {
+    const track = document.getElementById('techTrack');
+    if (!track) return;
+
+    const TECH = [
+        { name: 'Java', icon: 'openjdk' },
+        { name: 'Spring Boot', icon: 'springboot' },
+        { name: 'Spigot', icon: 'spigotmc' },
+        { name: 'Paper', mono: 'P', color: '#9AA5B1' },
+        { name: 'Velocity', icon: 'velocity' },
+        { name: 'PHP', icon: 'php' },
+        { name: 'CodeIgniter', icon: 'codeigniter' },
+        { name: 'Laravel', icon: 'laravel' },
+        { name: 'Blade', mono: 'B', color: '#FF2D20' },
+        { name: 'Tailwind CSS', icon: 'tailwindcss' },
+        { name: 'HTML', icon: 'html5' },
+        { name: 'CSS', icon: 'css' },
+        { name: 'JavaScript', icon: 'javascript' },
+        { name: 'Node.js', icon: 'nodedotjs' },
+        { name: 'npm', icon: 'npm' },
+        { name: 'Flutter', icon: 'flutter' },
+        { name: 'C#', mono: 'C#', color: '#9B4F96' },
+        { name: 'Git', icon: 'git' },
+        { name: 'MySQL', icon: 'mysql' },
+        { name: 'Oracle', mono: 'OR', color: '#F80000' },
+        { name: 'SQL Server', mono: 'SQL', color: '#CC2927' },
+        { name: 'SQLite', icon: 'sqlite' },
+        { name: 'MongoDB', icon: 'mongodb' },
+        { name: 'Docker', icon: 'docker' },
+        { name: 'IntelliJ IDEA', icon: 'intellijidea' },
+        { name: 'PhpStorm', icon: 'phpstorm' },
+        { name: 'VS Code', mono: 'VS', color: '#007ACC' },
+        { name: 'Eclipse', icon: 'eclipseide' },
+        { name: 'Claude', icon: 'claude' }
+    ];
+
+    function buildTile(t) {
+        const item = document.createElement('div');
+        item.className = 'tech-item';
+
+        const iconWrap = document.createElement('span');
+        iconWrap.className = 'tech-icon';
+
+        if (t.icon) {
+            const img = document.createElement('img');
+            img.src = `./assets/img/icons/${t.icon}.svg`;
+            img.alt = t.name;
+            img.loading = 'lazy';
+            iconWrap.appendChild(img);
+        } else {
+            iconWrap.style.setProperty('--tc', t.color);
+            const mono = document.createElement('span');
+            mono.className = 'tech-mono';
+            mono.textContent = t.mono;
+            iconWrap.appendChild(mono);
+        }
+
+        const name = document.createElement('span');
+        name.className = 'tech-name';
+        name.textContent = t.name;
+
+        item.appendChild(iconWrap);
+        item.appendChild(name);
+        return item;
+    }
+
+    // Set duplicato una volta: il track scorre di -50% e riparte senza scatti
+    // (stesso loop "seamless" del carosello di codice), lentamente verso sinistra.
+    [...TECH, ...TECH].forEach(t => track.appendChild(buildTile(t)));
+})();
+
 // ----- code showcase: snippet reali, finestre stile IntelliJ a scorrimento -----
 // Non è un parser Java completo: è un tokenizzatore leggero che riconosce
 // commenti, stringhe, annotazioni, keyword e tipi (parole che iniziano con
