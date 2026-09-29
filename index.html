@@ -220,22 +220,22 @@
         </div>
     </section>
 
-    <section id="about">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="about.eyebrow">chi sono</div>
-                <h2 class="section-title">About me</h2>
+    <div class="wrap">
+        <div class="bento">
+
+            <!-- ===== ABOUT ===== -->
+            <div class="bento-item span-4 profile-card" id="about">
+                <div class="avatar-ring"></div>
+                <h3>Filippo</h3>
+                <div class="meta-line" data-i18n="about.age">22 anni</div>
+                <div class="meta-line">Perugia</div>
+                <div class="slogan" data-i18n="about.slogan">La curiosità è il mio linguaggio preferito!</div>
             </div>
-            <div class="about-grid">
-                <div class="avatar-card">
-                    <div class="avatar-ring"></div>
-                    <h3>Filippo</h3>
-                    <div class="meta-line" data-i18n="about.age">22 anni</div>
-                    <div class="meta-line">Perugia</div>
-                    <div class="slogan" data-i18n="about.slogan">La curiosità è il mio linguaggio preferito!</div>
-                    <!--<span class="status-pill"><span class="dot"></span>Disponibile per progetti</span>-->
-                </div>
-                <div class="about-text">
+
+            <div class="bento-item span-8">
+                <div class="card-kicker" data-i18n="about.eyebrow">chi sono</div>
+                <h2 class="card-title">About Me</h2>
+                <div class="body-text">
                     <p data-i18n="about.p1">C'è stato un tempo in cui la parola <strong>«developer»</strong> non significava niente per me. La incontrai per
                         caso in una community online, accanto al nome di qualcuno come fosse un titolo nobiliare.
                         «E quello cosa fa?». Ricevetti una risposta che, lo ammetto, non chiariva granché,
@@ -252,24 +252,15 @@
                         che, insieme alle prime esperienze lavorative, mi sta aiutando a muovermi nel
                         mondo del lavoro come developer, oltre a dare forma ai progetti personali che mostro di seguito.
                     </p>
-                    <!--<p>Più delle tecnologie che uso, però, a definirmi è il modo in cui mi pongo: ho voglia di
-                        <strong>mettermi in gioco</strong>, di imparare da chi ha più esperienza di me e di farmi
-                        coinvolgere in progetti più grandi di quelli che porto avanti da solo. Non cerco soltanto
-                        qualcosa da costruire, ma <strong>persone con cui costruirlo</strong> e sfide su cui crescere.
-                    </p>-->
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="skills">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="skills.eyebrow">competenze</div>
-                <h2 class="section-title">Skills</h2>
-            </div>
+            <!-- ===== SKILLS ===== -->
+            <div class="bento-item span-12" id="skills">
+                <div class="card-kicker" data-i18n="skills.eyebrow">competenze</div>
+                <h2 class="card-title">Skills</h2>
 
-            <div class="ide">
+                <div class="ide">
                 <div class="ide-bar">
                     <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
                     <span class="tname">skills.properties</span>
@@ -406,78 +397,66 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="stack">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="stack.eyebrow">linguaggi &amp; strumenti</div>
-                <h2 class="section-title">Tech Stack</h2>
+        <!-- ===== TECH STACK ===== -->
+        <div class="bento-item span-12" id="stack">
+            <div class="card-kicker" data-i18n="stack.eyebrow">linguaggi &amp; strumenti</div>
+            <h2 class="card-title">Tech Stack</h2>
+            <div class="tech-carousel" id="techCarousel">
+                <div class="tech-track" id="techTrack">
+                    <!-- icone generate da JavaScript (assets/js/script.js) -->
+                </div>
             </div>
         </div>
-        <div class="tech-carousel" id="techCarousel">
-            <div class="tech-track" id="techTrack">
-                <!-- icone generate da JavaScript (assets/js/script.js) -->
-            </div>
-        </div>
-    </section>
 
-    <section id="code">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="code.eyebrow">codice reale</div>
-                <h2 class="section-title" data-i18n="code.title">Codice reale</h2>
-            </div>
+        <!-- ===== CODE SHOWCASE ===== -->
+        <div class="bento-item span-12" id="code">
+            <div class="card-kicker" data-i18n="code.eyebrow">codice reale</div>
+            <h2 class="card-title" data-i18n="code.title">Codice reale</h2>
             <p class="code-intro" data-i18n="code.intro">Non demo, ma frammenti veri estratti dai miei progetti privati - plugin Bukkit ed
                 EndlessHorizons Network. Passa il mouse per mettere in pausa lo scorrimento.</p>
-        </div>
-        <div class="code-carousel" id="codeCarousel">
-            <div class="code-track" id="codeTrack">
-                <!-- finestre di codice generate da JavaScript (assets/js/script.js) -->
+            <div class="code-carousel" id="codeCarousel">
+                <div class="code-track" id="codeTrack">
+                    <!-- finestre di codice generate da JavaScript (assets/js/script.js) -->
+                </div>
             </div>
         </div>
-    </section>
 
-    <section id="services">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="services.eyebrow">cosa posso fare</div>
-                <h2 class="section-title" data-i18n="services.title">Servizi</h2>
-            </div>
-            <div class="svc-grid">
-                <div class="svc-card">
-                    <div class="svc-num">01</div>
-                    <h3>Plugin Bukkit/Spigot</h3>
-                    <p data-i18n="svc1.p">Plugin custom e ottimizzati per server Minecraft, su misura per le esigenze del tuo server.</p>
-                    <a href="https://www.fiverr.com/s/5qKRrb" target="_blank" class="svc-link" data-i18n="svc.more">Scopri di più →</a>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-num">02</div>
-                    <h3 data-i18n="svc2.title">Bot Discord</h3>
-                    <p data-i18n="svc2.p">Bot Discord personalizzati: moderazione, intrattenimento o gestione community, costruiti su
-                        misura.</p>
-                    <a href="https://www.fiverr.com/s/Z3xWmY" target="_blank" class="svc-link" data-i18n="svc.more">Scopri di più →</a>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-num">03</div>
-                    <h3 data-i18n="svc3.title">Siti web completi</h3>
-                    <p data-i18n="svc3.p">Realizzo siti con una grafica accurata e intuitiva, sistemi di gestione database
-                        puliti e funzionali (login/registrazione, conversazioni...)</p>
-                    <a href="#" class="svc-link disabled" data-i18n="svc.soon">In arrivo</a>
-                </div>
-            </div>
+        <!-- ===== SERVICES ===== -->
+        <div class="bento-label" id="services">
+            <div class="card-kicker" data-i18n="services.eyebrow">cosa posso fare</div>
+            <h2 class="card-title" data-i18n="services.title">Servizi</h2>
         </div>
-    </section>
 
-    <section id="projects">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="projects.eyebrow">progetti</div>
-                <h2 class="section-title">EndlessHorizons Network</h2>
-            </div>
-            <div class="server-showcase">
-                <div class="server-logo-card">
-                    <img src="https://endlesshorizons.it/images/logo.png" alt="EndlessHorizons Network Logo" class="server-logo">
+        <div class="bento-item span-4 tile-card">
+            <div class="tile-num">01</div>
+            <h3 class="tile-title">Plugin Bukkit/Paper</h3>
+            <p class="tile-text" data-i18n="svc1.p">Plugin custom e ottimizzati per server Minecraft, su misura per le esigenze del tuo server.</p>
+            <a href="https://www.fiverr.com/s/5qKRrb" target="_blank" class="tile-link" data-i18n="svc.more">Scopri di più →</a>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <div class="tile-num">02</div>
+            <h3 class="tile-title" data-i18n="svc2.title">Bot Discord</h3>
+            <p class="tile-text" data-i18n="svc2.p">Bot Discord personalizzati: moderazione, intrattenimento o gestione community, costruiti su
+                misura.</p>
+            <a href="https://www.fiverr.com/s/Z3xWmY" target="_blank" class="tile-link" data-i18n="svc.more">Scopri di più →</a>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <div class="tile-num">03</div>
+            <h3 class="tile-title" data-i18n="svc3.title">Siti web completi</h3>
+            <p class="tile-text" data-i18n="svc3.p">Realizzo siti con una grafica accurata e intuitiva, sistemi di gestione database
+                puliti e funzionali (login/registrazione, conversazioni...)</p>
+            <a href="#" class="tile-link disabled" data-i18n="svc.soon">In arrivo</a>
+        </div>
+
+        <!-- ===== PROJECTS ===== -->
+        <div class="bento-label" id="projects">
+            <div class="card-kicker" data-i18n="projects.eyebrow">progetti</div>
+            <h2 class="card-title">EndlessHorizons Network</h2>
+        </div>
+
+        <div class="bento-item span-4 logo-card">
+            <img src="https://endlesshorizons.it/images/logo.png" alt="EndlessHorizons Network Logo" class="server-logo">
                     <span class="status-pill"><span class="dot"></span>Online</span>
                     <div class="server-meta">
                         <div class="server-stat">
@@ -493,146 +472,142 @@
                             <span class="stat-val">RolePlay</span>
                         </div>
                     </div>
-                </div>
-                <div class="server-info">
-                    <p data-i18n="projects.p1"><strong>EndlessHorizons Network</strong> è un server Minecraft <strong>RolePlay</strong> open-world, dove i
-                        giocatori simulano la vita reale e la vivono come preferiscono. Lo porto avanti come <strong>CEO e Project
-                            Manager dello sviluppo</strong>, insieme a <strong>Kyrolos Ebrahem</strong> (<strong>Lead Developer</strong>) e un team appassionato sparso per l'Italia.</p>
-                    <p data-i18n="projects.p2">Dietro le quinte ci sono <strong>plugin Bukkit custom in Java</strong> e il sito ufficiale
-                        <strong>endlesshorizons.it</strong> (Laravel, Node.js, Tailwind). È qui che vive il mio vero <strong>codice
-                            sorgente</strong> (privato e curato) mentre il mio Git pubblico è solo per divertimento.</p>
-                    <a href="https://endlesshorizons.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary server-btn" data-i18n="projects.btn">Visita endlesshorizons.it →</a>
-                </div>
-            </div>
+        </div>
 
-            <h3 class="subsection-title" data-i18n="projects.ehnHeading">Cosa ho sviluppato per EHN</h3>
-            <div class="proj-grid">
-                <div class="proj-card">
-                    <h4>Sito &amp; API</h4>
-                    <p data-i18n="projects.ehn1.p">Il sito ufficiale di EHN, costruito in Laravel: espone le API che il server Minecraft
-                        consuma per sincronizzare dati tra gioco e piattaforma web.</p>
-                    <div class="proj-tags"><span>Laravel</span><span>MySQL</span><span>API REST</span></div>
-                </div>
-                <div class="proj-card">
-                    <h4>Plugin Bridge</h4>
-                    <p data-i18n="projects.ehn2.p">Plugin Bukkit che fa da ponte tra server e sito: riceve le richieste dalla piattaforma
-                        web e invia in tempo reale gli aggiornamenti al gioco.</p>
-                    <div class="proj-tags"><span>Java</span><span>Bukkit/Spigot</span></div>
-                </div>
-                <div class="proj-card">
-                    <h4>EndlessVehicles</h4>
-                    <p data-i18n="projects.ehn3.p">Plugin per veicoli guidabili nel mondo di gioco (auto, moto e altri mezzi), integrato
-                        con l'economia e i permessi del server.</p>
-                    <div class="proj-tags"><span>Java</span><span>Spigot</span></div>
-                </div>
-                <div class="proj-card">
-                    <h4>EndlessDevices</h4>
-                    <p data-i18n="projects.ehn4.p">Plugin per dispositivi elettronici simulati in game: smartphone ed elettrodomestici
-                        utilizzabili dai giocatori nel roleplay.</p>
-                    <div class="proj-tags"><span>Java</span><span>Spigot</span></div>
-                </div>
-                <div class="proj-card">
-                    <h4>EndlessWearables</h4>
-                    <p data-i18n="projects.ehn5.p">Plugin per skin e cosmetici indossabili, per personalizzare l'aspetto del personaggio
-                        senza toccare la skin di base.</p>
-                    <div class="proj-tags"><span>Java</span><span>Spigot</span></div>
-                </div>
+        <div class="bento-item span-8">
+            <div class="body-text">
+                <p data-i18n="projects.p1"><strong>EndlessHorizons Network</strong> è un server Minecraft <strong>RolePlay</strong> open-world, dove i
+                    giocatori simulano la vita reale e la vivono come preferiscono. Lo porto avanti come <strong>CEO e Project
+                        Manager dello sviluppo</strong>, insieme a <strong>Kyrolos Ebrahem</strong> (<strong>Lead Developer</strong>) e un team appassionato sparso per l'Italia.</p>
+                <p data-i18n="projects.p2">Dietro le quinte ci sono <strong>plugin Bukkit custom in Java</strong> e il sito ufficiale
+                    <strong>endlesshorizons.it</strong> (Laravel, Node.js, Tailwind). È qui che vive il mio vero <strong>codice
+                        sorgente</strong> (privato e curato) mentre il mio Git pubblico è solo per divertimento.</p>
             </div>
+            <a href="https://endlesshorizons.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="projects.btn">Visita endlesshorizons.it →</a>
+        </div>
 
-            <h3 class="subsection-title" data-i18n="projects.personalHeading">Progetti personali</h3>
-            <div class="proj-grid proj-grid-personal">
-                <div class="proj-card proj-signed">
-                    <h4>Biblioteca Elim Perugia</h4>
-                    <p data-i18n="projects.personal1.p">Gestionale per la biblioteca di una chiesa di Perugia: catalogo, prestiti e
-                        utenti in un'app mobile completa.</p>
-                    <div class="proj-tags"><span>Flutter</span><span>Dart</span></div>
-                    <div class="proj-signature" data-i18n="projects.personal1.sig">Firmato EHN Productions - è solo la firma che uso sui
-                        miei progetti personali, non un'attività freelance</div>
-                </div>
+        <div class="bento-label" data-i18n="projects.ehnHeading">Cosa ho sviluppato per EHN</div>
+
+        <div class="bento-item span-4 tile-card">
+            <h4 class="tile-title">Sito &amp; API</h4>
+            <p class="tile-text" data-i18n="projects.ehn1.p">Il sito ufficiale di EHN, costruito in Laravel: espone le API che il server Minecraft
+                consuma per sincronizzare dati tra gioco e piattaforma web.</p>
+            <div class="tile-tags"><span>Laravel</span><span>MySQL</span><span>API REST</span></div>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <h4 class="tile-title">Plugin Bridge</h4>
+            <p class="tile-text" data-i18n="projects.ehn2.p">Plugin Bukkit che fa da ponte tra server e sito: riceve le richieste dalla piattaforma
+                web e invia in tempo reale gli aggiornamenti al gioco.</p>
+            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <h4 class="tile-title">EndlessVehicles</h4>
+            <p class="tile-text" data-i18n="projects.ehn3.p">Plugin per veicoli guidabili nel mondo di gioco (auto, moto e altri mezzi), integrato
+                con l'economia e i permessi del server.</p>
+            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <h4 class="tile-title">EndlessDevices</h4>
+            <p class="tile-text" data-i18n="projects.ehn4.p">Plugin per dispositivi elettronici simulati in game: smartphone ed elettrodomestici
+                utilizzabili dai giocatori nel roleplay.</p>
+            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+        </div>
+        <div class="bento-item span-4 tile-card">
+            <h4 class="tile-title">EndlessWearables</h4>
+            <p class="tile-text" data-i18n="projects.ehn5.p">Plugin per skin e cosmetici indossabili, per personalizzare l'aspetto del personaggio
+                senza toccare la skin di base.</p>
+            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+        </div>
+
+        <div class="bento-label" data-i18n="projects.personalHeading">Progetti personali</div>
+
+        <div class="bento-item span-12 tile-card proj-signed">
+            <h4 class="tile-title">Biblioteca Elim Perugia</h4>
+            <p class="tile-text" data-i18n="projects.personal1.p">Gestionale per la biblioteca di una chiesa di Perugia: catalogo, prestiti e
+                utenti in un'app mobile completa.</p>
+            <div class="tile-tags"><span>Flutter</span><span>Dart</span></div>
+            <div class="proj-signature" data-i18n="projects.personal1.sig">Firmato EHN Productions - è solo la firma che uso sui
+                miei progetti personali, non un'attività freelance</div>
+        </div>
+
+        <!-- ===== COLLABORATOR ===== -->
+        <div class="bento-label" id="collaborators">
+            <div class="card-kicker" data-i18n="collab.eyebrow">collaborazione</div>
+            <h2 class="card-title" data-i18n="collab.title">Featured Collaborator</h2>
+        </div>
+
+        <div class="bento-item span-12 tile-card collab-card">
+            <div class="collab-avatar">
+                <img src="./assets/img/kyremworks.png" alt="KyremWorks" />
+            </div>
+            <div class="collab-content">
+                <h3 data-i18n="collab.name">KyremWorks</h3>
+                <p class="collab-role" data-i18n="collab.role">Lead Developer, EndlessHorizons Network</p>
+                <p data-i18n="collab.desc">Sviluppatore senior e amico, oltre che co-architetto del backend di EHN. Collaboriamo a diversi progetti privati oltre al server.</p>
+                <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="collab.visit">Visita il portfolio →</a>
             </div>
         </div>
-    </section>
 
-    <section id="collaborators">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="collab.eyebrow">collaborazione</div>
-                <h2 class="section-title" data-i18n="collab.title">Featured Collaborator</h2>
+        <!-- ===== CONTACT ===== -->
+        <div class="bento-label" id="contact">
+            <div class="card-kicker" data-i18n="contact.eyebrow">parliamone</div>
+            <h2 class="card-title" data-i18n="contact.title">Contattami</h2>
+        </div>
+
+        <div class="bento-item span-5">
+            <p class="contact-intro" data-i18n="contact.intro">Hai un progetto in mente o vuoi semplicemente scambiare due chiacchiere? Scrivimi,
+                ti risponderò appena possibile.</p>
+            <div class="contact-row">
+                <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 6-10 7L2 6"></path>
+                </svg>
+                hinceanufilippo4@gmail.com
             </div>
-            <div class="collab-card">
-                <div class="collab-avatar">
-                    <img src="./assets/img/kyremworks.png" alt="KyremWorks" />
-                </div>
-                <div class="collab-content">
-                    <h3 data-i18n="collab.name">KyremWorks</h3>
-                    <p class="collab-role" data-i18n="collab.role">Lead Developer, EndlessHorizons Network</p>
-                    <p data-i18n="collab.desc">Sviluppatore senior e amico, oltre che co-architetto del backend di EHN. Collaboriamo a diversi progetti privati oltre al server.</p>
-                    <a href="https://kyremworks.github.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="collab.visit">Visita il portfolio →</a>
-                </div>
+            <div class="social-row">
+                <a class="social-btn" href="https://t.me/codewithfil" target="_blank" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M21.5 4.5 2.6 11.9c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.8c.2.7.5.9 1.1.4l2.9-2.6 4.7 3.5c.8.5 1.4.2 1.6-.7l3-14c.3-1.2-.4-1.7-1.2-1.3z" />
+                    </svg>
+                </a>
+                <a class="social-btn" href="https://discord.gg/SWuSQjStsh" target="_blank" aria-label="Discord">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 5.5a16.6 16.6 0 0 0-4.1-1.3l-.2.4a14.9 14.9 0 0 1 3.6 1.4 14.4 14.4 0 0 0-15.6 0 14.9 14.9 0 0 1 3.6-1.4l-.2-.4A16.6 16.6 0 0 0 3 5.5C1.2 8.4.6 11.4.9 14.4a16.7 16.7 0 0 0 5 2.6l.6-1a10.9 10.9 0 0 1-1.7-.8l.4-.3a13 13 0 0 0 10.6 0l.4.3a10.9 10.9 0 0 1-1.7.8l.6 1a16.7 16.7 0 0 0 5-2.6c.4-3.4-.4-6.4-2-8.9ZM8.9 13.1c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Zm6.2 0c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Z" />
+                    </svg>
+                </a>
+                <a class="social-btn" href="https://www.instagram.com/codewithfil" target="_blank"
+                    aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="3.6"></circle>
+                        <circle cx="17.2" cy="6.8" r="1"></circle>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="contact.eyebrow">parliamone</div>
-                <h2 class="section-title" data-i18n="contact.title">Contattami</h2>
+        <form class="bento-item span-7" name="submit-to-google-sheet" id="contactForm">
+            <div class="field">
+                <label for="cf-name" data-i18n="contact.label.name">Nome</label>
+                <input id="cf-name" type="text" name="Name" placeholder="Il tuo nome" data-i18n-placeholder="contact.ph.name" required>
             </div>
-            <div class="contact-grid">
-                <div>
-                    <p class="intro" data-i18n="contact.intro">Hai un progetto in mente o vuoi semplicemente scambiare due chiacchiere? Scrivimi,
-                        ti risponderò appena possibile.</p>
-                    <div class="contact-row">
-                        <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                            <path d="m22 6-10 7L2 6"></path>
-                        </svg>
-                        hinceanufilippo4@gmail.com
-                    </div>
-                    <div class="social-row">
-                        <a class="social-btn" href="https://t.me/codewithfil" target="_blank" aria-label="Telegram">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M21.5 4.5 2.6 11.9c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.8c.2.7.5.9 1.1.4l2.9-2.6 4.7 3.5c.8.5 1.4.2 1.6-.7l3-14c.3-1.2-.4-1.7-1.2-1.3z" />
-                            </svg>
-                        </a>
-                        <a class="social-btn" href="https://discord.gg/SWuSQjStsh" target="_blank" aria-label="Discord">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20 5.5a16.6 16.6 0 0 0-4.1-1.3l-.2.4a14.9 14.9 0 0 1 3.6 1.4 14.4 14.4 0 0 0-15.6 0 14.9 14.9 0 0 1 3.6-1.4l-.2-.4A16.6 16.6 0 0 0 3 5.5C1.2 8.4.6 11.4.9 14.4a16.7 16.7 0 0 0 5 2.6l.6-1a10.9 10.9 0 0 1-1.7-.8l.4-.3a13 13 0 0 0 10.6 0l.4.3a10.9 10.9 0 0 1-1.7.8l.6 1a16.7 16.7 0 0 0 5-2.6c.4-3.4-.4-6.4-2-8.9ZM8.9 13.1c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Zm6.2 0c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Z" />
-                            </svg>
-                        </a>
-                        <a class="social-btn" href="https://www.instagram.com/codewithfil" target="_blank"
-                            aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                                <circle cx="12" cy="12" r="3.6"></circle>
-                                <circle cx="17.2" cy="6.8" r="1"></circle>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <form class="contact-form" name="submit-to-google-sheet" id="contactForm">
-                    <div class="field">
-                        <label for="cf-name" data-i18n="contact.label.name">Nome</label>
-                        <input id="cf-name" type="text" name="Name" placeholder="Il tuo nome" data-i18n-placeholder="contact.ph.name" required>
-                    </div>
-                    <div class="field">
-                        <label for="cf-email" data-i18n="contact.label.email">Email</label>
-                        <input id="cf-email" type="email" name="Email" placeholder="latua@email.com" data-i18n-placeholder="contact.ph.email" required>
-                    </div>
-                    <div class="field">
-                        <label for="cf-msg" data-i18n="contact.label.msg">Messaggio</label>
-                        <textarea id="cf-msg" name="Message" placeholder="Raccontami del tuo progetto..." data-i18n-placeholder="contact.ph.msg"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="contact.submit" disabled>Invia
-                        messaggio</button>
-                </form>
+            <div class="field">
+                <label for="cf-email" data-i18n="contact.label.email">Email</label>
+                <input id="cf-email" type="email" name="Email" placeholder="latua@email.com" data-i18n-placeholder="contact.ph.email" required>
             </div>
+            <div class="field">
+                <label for="cf-msg" data-i18n="contact.label.msg">Messaggio</label>
+                <textarea id="cf-msg" name="Message" placeholder="Raccontami del tuo progetto..." data-i18n-placeholder="contact.ph.msg"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="contact.submit" disabled>Invia
+                messaggio</button>
+        </form>
+
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="wrap">
