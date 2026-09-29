@@ -523,6 +523,14 @@ nav {
     color: var(--text-dim);
 }
 
+.hl-anno {
+    color: var(--amber);
+}
+
+.hl-type {
+    color: #4ec9b0;
+}
+
 /* cursore a barra "|" stile editor */
 .ide-caret {
     display: inline-block;
@@ -919,6 +927,77 @@ section {
 
 .skill-block ul li strong {
     color: var(--text);
+}
+
+/* ===== CODE SHOWCASE: snippet reali, finestre stile IDE a scorrimento ===== */
+.code-intro {
+    color: var(--text-dim);
+    max-width: 620px;
+    margin: -30px auto 0;
+    text-align: center;
+}
+
+.code-carousel {
+    margin-top: 48px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.code-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    width: max-content;
+    padding: 0 28px;
+    animation: codeScroll 55s linear infinite;
+}
+
+.code-carousel:hover .code-track {
+    animation-play-state: paused;
+}
+
+@keyframes codeScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.code-window {
+    flex: 0 0 auto;
+    width: min(480px, 86vw);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px #000a;
+}
+
+.code-window .code-tag {
+    padding: 7px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    border-bottom: 1px solid var(--border);
+}
+
+.code-window .term-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .code-track {
+        animation: none;
+    }
+
+    .code-carousel {
+        overflow-x: auto;
+    }
 }
 
 /* ===== SERVICES ===== */

@@ -125,6 +125,141 @@
     setTimeout(() => typeFileName(() => { P = buildProgram(); pi = 0; run(); }), 500);
 })();
 
+// ----- code showcase: snippet reali, finestre stile IntelliJ a scorrimento -----
+// Non è un parser Java completo: è un tokenizzatore leggero che riconosce
+// commenti, stringhe, annotazioni, keyword e tipi (parole che iniziano con
+// maiuscola) quanto basta per un syntax-highlight coerente con lo stile del
+// sito. Per aggiungere un nuovo snippet basta un nuovo oggetto in SNIPPETS.
+(function () {
+    const track = document.getElementById('codeTrack');
+    if (!track) return;
+
+    const SNIPPETS = [
+        {
+            file: 'Book.java',
+            tag: 'Spring Boot · JPA Entity',
+            code: `@Entity
+@Table(name = "books",
+        uniqueConstraints = @UniqueConstraint(name = "uk_books_isbn", columnNames = "isbn"))
+@Getter
+@Setter
+@NoArgsConstructor
+public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 300)
+    private String title;
+
+    @Column(nullable = false, length = 200)
+    private String author;
+
+    @Column(length = 20)
+    private String isbn;
+
+    // Book category or topic
+    @Column(length = 100)
+    private String category;
+
+    @Column(length = 200)
+    private String publisher;
+
+    @Column(name = "publication_year")
+    private Integer publicationYear;
+
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String notes;
+
+    // Uploaded cover image path
+    @Column(name = "cover_image", length = 500)
+    private String coverImage;
+
+    // External cover URL, set on ISBN lookup
+    @Column(name = "cover_url", length = 1000)
+    private String coverUrl;
+
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at", nullable = false)
+    private Instant updatedAt;
+}`
+        }
+    ];
+
+    const KEYWORDS = new Set(['public', 'private', 'protected', 'class', 'interface', 'extends',
+        'implements', 'static', 'final', 'void', 'new', 'return', 'if', 'else', 'for', 'while',
+        'import', 'package', 'this', 'true', 'false', 'null', 'boolean', 'int', 'long', 'double',
+        'float', 'char', 'byte', 'short']);
+
+    function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // Un token per iterazione: commento // fino a fine riga, stringa "...",
+    // annotazione @Nome, tipo (Maiuscola...), parola minuscola, spazi, o
+    // singolo carattere (punteggiatura/numeri) come fallback.
+    const TOKEN_RE = /(\/\/.*$)|("(?:[^"\\]|\\.)*")|(@[A-Za-z_][A-Za-z0-9_]*)|(\b[A-Z][A-Za-z0-9_]*\b)|(\b[a-zA-Z_][A-Za-z0-9_]*\b)|(\s+)|(.)/g;
+
+    function highlightLine(line) {
+        let out = '';
+        let m;
+        TOKEN_RE.lastIndex = 0;
+        while ((m = TOKEN_RE.exec(line)) !== null) {
+            const [, comment, str, anno, type, word, space, other] = m;
+            if (comment) out += `<span class="hl-com">${escapeHtml(comment)}</span>`;
+            else if (str) out += `<span class="hl-str">${escapeHtml(str)}</span>`;
+            else if (anno) out += `<span class="hl-anno">${escapeHtml(anno)}</span>`;
+            else if (word && KEYWORDS.has(word)) out += `<span class="hl-key">${escapeHtml(word)}</span>`;
+            else if (type) out += `<span class="hl-type">${escapeHtml(type)}</span>`;
+            else if (word) out += `<span class="hl-text">${escapeHtml(word)}</span>`;
+            else out += escapeHtml(space || other || '');
+        }
+        return out || ' ';
+    }
+
+    function buildWindow({ file, tag, code }) {
+        const win = document.createElement('div');
+        win.className = 'code-window';
+
+        const bar = document.createElement('div');
+        bar.className = 'term-bar';
+        bar.innerHTML = '<span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>' +
+            `<span class="tname">${escapeHtml(file)}</span>`;
+        win.appendChild(bar);
+
+        if (tag) {
+            const tagEl = document.createElement('div');
+            tagEl.className = 'code-tag';
+            tagEl.textContent = tag;
+            win.appendChild(tagEl);
+        }
+
+        const body = document.createElement('div');
+        body.className = 'term-body code-snippet';
+        body.innerHTML = code.split('\n').map((l, i) =>
+            `<div class="ln"><span class="ln-num">${String(i + 1).padStart(2, ' ')}</span>` +
+            `<span class="ln-content">${highlightLine(l)}</span></div>`
+        ).join('');
+        win.appendChild(body);
+
+        return win;
+    }
+
+    // Il set è duplicato una volta: il track scorre di -50% e riparte senza
+    // scatti (loop "seamless" stile marquee), qualunque sia il numero di snippet.
+    [...SNIPPETS, ...SNIPPETS].forEach(s => track.appendChild(buildWindow(s)));
+})();
+
 // ----- hero role: effetto macchina da scrivere -----
 // I ruoli arrivano dal modulo della lingua attiva (I18N.onChange): l'animazione
 // si riavvia da sola ad ogni cambio lingua. Fallback no-JS: il testo statico
