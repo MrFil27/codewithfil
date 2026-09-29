@@ -125,11 +125,12 @@
     setTimeout(() => typeFileName(() => { P = buildProgram(); pi = 0; run(); }), 500);
 })();
 
-// ----- tech stack: scorrimento icone linguaggi/framework/strumenti -----
-// Le icone reali sono SVG locali (assets/img/icons, brand ufficiali). Per le
-// tecnologie senza un'icona pubblica disponibile (Paper, Blade, C#, Oracle,
-// SQL Server, VS Code) si usa un piccolo badge con iniziali colorate al posto
-// dell'icona, mantenendo lo stesso layout del riquadro.
+// ----- tech stack: scorrimento icone linguaggi/framework/strumenti/OS -----
+// Le icone reali sono SVG locali (assets/img/icons, brand ufficiali: Simple
+// Icons, Devicon, e per Paper l'SVG ufficiale dal repo PaperMC/website). Blade
+// è l'unica senza un'icona pubblica riconosciuta (Laravel stesso non ne ha
+// mai definita una separata): per quella si usa un piccolo badge con iniziale
+// colorata al posto dell'icona, mantenendo lo stesso layout del riquadro.
 (function () {
     const track = document.getElementById('techTrack');
     if (!track) return;
@@ -138,7 +139,7 @@
         { name: 'Java', icon: 'openjdk' },
         { name: 'Spring Boot', icon: 'springboot' },
         { name: 'Spigot', icon: 'spigotmc' },
-        { name: 'Paper', mono: 'P', color: '#9AA5B1' },
+        { name: 'Paper', icon: 'paper' },
         { name: 'Velocity', icon: 'velocity' },
         { name: 'PHP', icon: 'php' },
         { name: 'CodeIgniter', icon: 'codeigniter' },
@@ -151,19 +152,23 @@
         { name: 'Node.js', icon: 'nodedotjs' },
         { name: 'npm', icon: 'npm' },
         { name: 'Flutter', icon: 'flutter' },
-        { name: 'C#', mono: 'C#', color: '#9B4F96' },
+        { name: 'C#', icon: 'csharp' },
         { name: 'Git', icon: 'git' },
         { name: 'MySQL', icon: 'mysql' },
-        { name: 'Oracle', mono: 'OR', color: '#F80000' },
-        { name: 'SQL Server', mono: 'SQL', color: '#CC2927' },
+        { name: 'Oracle', icon: 'oracle' },
+        { name: 'SQL Server', icon: 'mssql' },
         { name: 'SQLite', icon: 'sqlite' },
         { name: 'MongoDB', icon: 'mongodb' },
         { name: 'Docker', icon: 'docker' },
         { name: 'IntelliJ IDEA', icon: 'intellijidea' },
         { name: 'PhpStorm', icon: 'phpstorm' },
-        { name: 'VS Code', mono: 'VS', color: '#007ACC' },
+        { name: 'VS Code', icon: 'vscode' },
         { name: 'Eclipse', icon: 'eclipseide' },
-        { name: 'Claude', icon: 'claude' }
+        { name: 'Claude', icon: 'claude' },
+        { name: 'Apache', icon: 'apache' },
+        { name: 'Windows', icon: 'windows11' },
+        { name: 'Linux', icon: 'linux' },
+        { name: 'Ubuntu', icon: 'ubuntu' }
     ];
 
     function buildTile(t) {

@@ -46,7 +46,7 @@ window.I18N.register('en', {
         'skills.group.tools': 'Tools',
 
         'skill.java.lvl': 'Experience since 2021',
-        'skill.java.p': 'My main language. For years I\'ve been working on <strong>Bukkit/Spigot plugins</strong> for Minecraft and custom <strong>Discord bots</strong> built with the <strong>JDA</strong> library.',
+        'skill.java.p': 'My main language. For years I\'ve been working on <strong>Bukkit/Paper plugins</strong> for Minecraft and custom <strong>Discord bots</strong> built with the <strong>JDA</strong> library.',
         'skill.java.li1': '<strong>Lombok annotations</strong> and <strong>Sql2o</strong> - libraries I use regularly',
         'skill.java.li2': '<strong>Hibernate</strong>, <strong>Spring / Spring Boot</strong> - currently consolidating, on solid foundations carried over from plugins and databases, so the learning curve is short',
 
