@@ -33,7 +33,7 @@ window.I18N.register('en', {
 
         // ---- About ----
         'about.eyebrow': 'who i am',
-        'about.age': '21 years old',
+        'about.age': '22 years old',
         'about.slogan': 'Curiosity is my favourite language!',
         'about.p1': 'There was a time when the word <strong>"developer"</strong> meant nothing to me. I stumbled across it by chance in an online community, sitting next to someone\'s name like a noble title. "And what does that one do?". I got an answer that, I\'ll admit, didn\'t clear much up, but it was enough to send me down the rabbit hole. I never climbed back out: today that mysterious word is simply my craft. My name is Filippo, and I\'m a Java and Web developer.',
         'about.p2': 'What excites me isn\'t just writing code, but watching something real take shape from an idea: taking a problem, breaking it down and watching the pieces fall into place until everything works. I\'m a <strong>curious soul by nature</strong>: I\'m fascinated by the universe and, more broadly, by anything that makes me wonder <em>how things work</em> — ultimately the same question that keeps me in front of the screen.',
@@ -57,6 +57,10 @@ window.I18N.register('en', {
         'skill.node.lvl': 'Currently in use',
         'skill.node.p': 'Currently part of my web stack, and previously used for Discord and Telegram bots.',
         'skill.node.li1': 'Currently used in the active project <a href="https://glitchvalley.it" target="_blank" style="color:var(--amber);">glitchvalley.it</a>, alongside Laravel, npm and Tailwind CSS',
+
+        'skill.flutter.lvl': 'Personal project',
+        'skill.flutter.p': 'Google\'s framework for cross-platform apps with <strong>Dart</strong>. I used it to build a full management app, from the interface down to the backend connection.',
+        'skill.flutter.li1': '<strong>Biblioteca Elim Perugia</strong> — a catalogue and loan management app for a library, signed <em>EHN Productions</em>: that\'s just the signature I use on my personal projects, not a freelance business',
 
         'skill.ide.lvl': 'Daily professional use',
         'skill.ide.p': 'Subscribed to every JetBrains service, though I actively use only the ones I really need.',
