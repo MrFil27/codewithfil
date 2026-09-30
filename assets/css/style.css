@@ -787,9 +787,22 @@ nav {
     display: flex;
     align-items: center;
     gap: 9px;
-    border-left: 2px solid transparent;
     transition: background .15s, color .15s;
     position: relative;
+}
+
+/* barretta verde arrotondata a sinistra della voce attiva ("| Java") */
+.tree-item::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 3px;
+    height: 60%;
+    border-radius: 3px;
+    background: var(--green);
+    transform: translateY(-50%) scaleY(0);
+    transition: transform .18s ease;
 }
 
 .tree-item .tree-icon {
@@ -806,7 +819,10 @@ nav {
 .tree-item.active {
     background: var(--green-soft);
     color: var(--green);
-    border-left-color: var(--green);
+}
+
+.tree-item.active::before {
+    transform: translateY(-50%) scaleY(1);
 }
 
 .ide-panel {
@@ -1427,12 +1443,7 @@ footer a:hover {
 
     .tree-item {
         padding: 8px 12px;
-        border-left: none;
         border-radius: 6px;
-    }
-
-    .tree-item.active {
-        border-left: none;
     }
 
     .collab-card {
