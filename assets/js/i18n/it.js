@@ -11,7 +11,9 @@ window.I18N.register('it', {
     flag: 'flag-it',
     base: true,
     // Ruoli che scorrono nel sottotitolo dell'hero (effetto macchina da scrivere).
-    roles: ['Java developer', 'Backend developer', 'Modeler & texturer'],
+    roles: ['Java developer', 'Web developer', 'Backend developer', 'Modeler & texturer'],
+    // Unità usata dopo il numero nella riga dell'età, calcolata a runtime (script.js).
+    ageUnit: 'anni',
     meta: {
         htmlLang: 'it',
         title: 'CodeWithFil - Java & Web Developer | Portfolio',

@@ -694,14 +694,6 @@ nav {
     line-height: 1.5;
 }
 
-.profile-card .slogan {
-    margin-top: 14px;
-    font-size: 12.5px;
-    font-style: italic;
-    color: var(--text-dim);
-    line-height: 1.5;
-}
-
 .status-pill {
     display: inline-flex;
     align-items: center;
