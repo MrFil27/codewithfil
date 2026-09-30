@@ -378,6 +378,36 @@ public class Book {
     window.I18N.onChange(cfg => start(cfg && cfg.roles));
 })();
 
+// ----- età: calcolata a runtime dalla data di nascita, niente da aggiornare a mano -----
+// Si ricalcola ad ogni cambio lingua (I18N.onChange) per usare l'unità giusta
+// ("anni" / "years old"). Fallback no-JS: il testo statico già in #ageLine.
+(function () {
+    const el = document.getElementById('ageLine');
+    if (!el) return;
+
+    const BIRTH_DATE = new Date(2004, 8, 22); // 22 settembre 2004
+
+    function computeAge() {
+        const now = new Date();
+        let age = now.getFullYear() - BIRTH_DATE.getFullYear();
+        const hadBirthdayThisYear = now.getMonth() > BIRTH_DATE.getMonth() ||
+            (now.getMonth() === BIRTH_DATE.getMonth() && now.getDate() >= BIRTH_DATE.getDate());
+        if (!hadBirthdayThisYear) age--;
+        return age;
+    }
+
+    function render(cfg) {
+        const unit = (cfg && cfg.ageUnit) || 'anni';
+        el.textContent = `${computeAge()} ${unit}`;
+    }
+
+    if (window.I18N && typeof window.I18N.onChange === 'function') {
+        window.I18N.onChange(render);
+    } else {
+        render();
+    }
+})();
+
 // ----- mobile nav toggle -----
 const navlinks = document.getElementById('navlinks');
 const navtoggle = document.getElementById('navtoggle');
