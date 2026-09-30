@@ -36,9 +36,8 @@ window.I18N.register('en', {
 
         // ---- About ----
         'about.eyebrow': 'who i am',
-        'about.p1': 'There was a time when the word <strong>"developer"</strong> meant nothing to me. I stumbled across it by chance in an online community, sitting next to someone\'s name like a noble title. "And what does that one do?". I got an answer that, I\'ll admit, didn\'t clear much up, but it was enough to send me down the rabbit hole. I never climbed back out: today that mysterious word is simply my craft. My name is Filippo, and I\'m a Java and Web developer.',
-        'about.p2': 'What excites me isn\'t just writing code, but watching something real take shape from an idea: taking a problem, breaking it down and watching the pieces fall into place until everything works. I\'m a <strong>curious soul by nature</strong>: I\'m fascinated by the universe and, more broadly, by anything that makes me wonder <em>how things work</em> - ultimately the same question that keeps me in front of the screen.',
-        'about.p3': 'I consider myself a <strong>Mid-Level</strong> developer: most of what I know I taught myself, building real projects and getting them wrong until they worked. I\'m now consolidating these skills with an <strong>ITS Umbria course in IT</strong> which, together with my first work experiences, is helping me find my footing in the industry as a developer, as well as shaping the personal projects I show below.',
+        'about.p1': 'I\'m naturally curious: I like understanding how things work and building them.',
+        'about.p2': 'I build Paper/Bukkit plugins, Discord bots and web applications, across a wide range of languages and frameworks.',
 
         // ---- Skills ----
         'skills.eyebrow': 'skills',
