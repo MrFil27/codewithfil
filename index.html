@@ -386,7 +386,7 @@
         <div class="bento-item span-12" id="stack">
             <div class="card-kicker" data-i18n="stack.eyebrow">linguaggi &amp; strumenti</div>
             <h2 class="card-title">My tech stack</h2>
-            <p class="code-intro" data-i18n="stack.intro">Linguaggi, framework e strumenti che conosco, non un elenco di tutto ciò che esiste.</p>
+            <p class="code-intro" data-i18n="stack.intro">Linguaggi, framework e strumenti che conosco.</p>
             <div class="tech-carousel" id="techCarousel">
                 <div class="tech-track" id="techTrack">
                     <!-- icone generate da JavaScript (assets/js/script.js) -->
@@ -404,6 +404,26 @@
                 <div class="code-track" id="codeTrack">
                     <!-- finestre di codice generate da JavaScript (assets/js/script.js) -->
                 </div>
+            </div>
+        </div>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <div class="bento-label" id="experience">
+            <div class="card-kicker" data-i18n="exp.eyebrow">esperienza</div>
+            <h2 class="card-title" data-i18n="exp.title">Esperienza lavorativa</h2>
+        </div>
+
+        <div class="bento-item span-12 tile-card collab-card experience-card">
+            <div class="experience-logo">
+                <img src="./assets/img/pucciufficio.png" alt="Pucciufficio Service" />
+            </div>
+            <div class="collab-content">
+                <h3>Pucciufficio Service</h3>
+                <p class="collab-role" data-i18n="exp.pucci.role">Tirocinante</p>
+                <p data-i18n="exp.pucci.desc">Ho sviluppato il frontend (con <strong>Bootstrap Italia</strong>) e parte del
+                    backend del sito di assistenza di Pucciufficio (ticket.pucciufficio.com), che presentava diversi
+                    bug, oltre a lavorare su altri software in PHP e alcune applicazioni Windows in C#.</p>
+                <a href="https://www.pucciufficio.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-i18n="exp.pucci.visit">Visita pucciufficio.com →</a>
             </div>
         </div>
 
@@ -474,34 +494,34 @@
         <div class="bento-label" data-i18n="projects.ehnHeading">Cosa ho sviluppato per EHN</div>
 
         <div class="bento-item span-4 tile-card">
-            <h4 class="tile-title">Sito &amp; API</h4>
+            <h4 class="tile-title" data-i18n="projects.ehn1.title">Sito &amp; API</h4>
             <p class="tile-text" data-i18n="projects.ehn1.p">Il sito ufficiale di EHN, costruito in Laravel: espone le API che il server Minecraft
                 consuma per sincronizzare dati tra gioco e piattaforma web.</p>
-            <div class="tile-tags"><span>Laravel</span><span>MySQL</span><span>API REST</span></div>
+            <div class="tile-tags"><span>Laravel</span><span>MySQL</span><span>API REST</span><span>Blade</span><span>TailwindCSS</span><span>AJAX</span><span>Docker</span><span>Git</span></div>
         </div>
         <div class="bento-item span-4 tile-card">
             <h4 class="tile-title">Plugin Bridge</h4>
             <p class="tile-text" data-i18n="projects.ehn2.p">Plugin Bukkit che fa da ponte tra server e sito: riceve le richieste dalla piattaforma
                 web e invia in tempo reale gli aggiornamenti al gioco.</p>
-            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+            <div class="tile-tags"><span>Java</span><span>Paper</span><span>Git</span></div>
         </div>
         <div class="bento-item span-4 tile-card">
             <h4 class="tile-title">EndlessVehicles</h4>
             <p class="tile-text" data-i18n="projects.ehn3.p">Plugin per veicoli guidabili nel mondo di gioco (auto, moto e altri mezzi), integrato
                 con l'economia e i permessi del server.</p>
-            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+            <div class="tile-tags"><span>Java</span><span>Paper</span><span>Git</span></div>
         </div>
         <div class="bento-item span-4 tile-card">
             <h4 class="tile-title">EndlessDevices</h4>
             <p class="tile-text" data-i18n="projects.ehn4.p">Plugin per dispositivi elettronici simulati in game: smartphone ed elettrodomestici
                 utilizzabili dai giocatori nel roleplay.</p>
-            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+            <div class="tile-tags"><span>Java</span><span>Paper</span><span>Git</span></div>
         </div>
         <div class="bento-item span-4 tile-card">
             <h4 class="tile-title">EndlessWearables</h4>
             <p class="tile-text" data-i18n="projects.ehn5.p">Plugin per skin e cosmetici indossabili, per personalizzare l'aspetto del personaggio
                 senza toccare la skin di base.</p>
-            <div class="tile-tags"><span>Java</span><span>Paper</span></div>
+            <div class="tile-tags"><span>Java</span><span>Paper</span><span>Git</span></div>
         </div>
 
         <div class="bento-label" data-i18n="projects.personalHeading">Progetti personali</div>
@@ -510,7 +530,7 @@
             <h4 class="tile-title">Biblioteca Elim Perugia</h4>
             <p class="tile-text" data-i18n="projects.personal1.p">Gestionale per la biblioteca di una chiesa di Perugia: catalogo, prestiti e
                 utenti in un'app mobile completa.</p>
-            <div class="tile-tags"><span>Flutter</span><span>Dart</span></div>
+            <div class="tile-tags"><span>Flutter</span><span>Dart</span><span>Java</span><span>Spring Boot</span></div>
             <div class="proj-signature" data-i18n="projects.personal1.sig">Firmato EHN Productions - è solo la firma che uso sui
                 miei progetti personali, non un'attività freelance</div>
         </div>

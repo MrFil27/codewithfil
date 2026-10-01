@@ -87,7 +87,7 @@ window.I18N.register('en', {
 
         // ---- Tech stack ----
         'stack.eyebrow': 'languages &amp; tools',
-        'stack.intro': 'Languages, frameworks and tools I know, not a list of everything that exists.',
+        'stack.intro': 'Languages, frameworks and tools I know.',
 
         // ---- Code showcase ----
         'code.eyebrow': 'real code',
@@ -105,6 +105,13 @@ window.I18N.register('en', {
         'svc.more': 'Learn more →',
         'svc.soon': 'Coming soon',
 
+        // ---- Experience ----
+        'exp.eyebrow': 'experience',
+        'exp.title': 'Work experience',
+        'exp.pucci.role': 'Intern',
+        'exp.pucci.desc': 'I developed the frontend (with <strong>Bootstrap Italia</strong>) and part of the backend of Pucciufficio\'s support site (ticket.pucciufficio.com), which had several bugs, as well as working on other PHP software and a few Windows applications in C#.',
+        'exp.pucci.visit': 'Visit pucciufficio.com →',
+
         // ---- Projects ----
         'projects.eyebrow': 'projects',
         'projects.versions': 'Versions',
@@ -114,6 +121,7 @@ window.I18N.register('en', {
         'projects.btn': 'Visit endlesshorizons.it →',
 
         'projects.ehnHeading': 'What I built for EHN',
+        'projects.ehn1.title': 'Site &amp; API',
         'projects.ehn1.p': 'EHN\'s official site, built in Laravel: it exposes the API the Minecraft server consumes to keep game and web platform in sync.',
         'projects.ehn2.p': 'A Bukkit plugin that bridges server and site: it receives requests from the web platform and pushes updates back into the game in real time.',
         'projects.ehn3.p': 'A plugin for drivable vehicles in the game world (cars, bikes and other rides), integrated with the server\'s economy and permissions.',
