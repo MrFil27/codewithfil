@@ -134,10 +134,12 @@ window.I18N.register('en', {
         'contact.ph.name': 'Your name',
         'contact.ph.email': 'you@email.com',
         'contact.ph.msg': 'Tell me about your project...',
+        'contact.privacy': 'I have read the <a href="./pages/policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> regarding the processing of my personal data.',
         'contact.submit': 'Send message',
 
         // ---- Footer ----
         'footer.rights': 'all rights reserved',
+        'footer.privacy': 'Privacy Policy',
 
         // ---- Collaborators ----
         'collab.eyebrow': 'collaboration',
