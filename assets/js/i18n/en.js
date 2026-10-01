@@ -108,7 +108,7 @@ window.I18N.register('en', {
         // ---- Experience ----
         'exp.eyebrow': 'experience',
         'exp.title': 'Work experience',
-        'exp.pucci.role': 'Intern',
+        'exp.pucci.role': 'Software Developer',
         'exp.pucci.desc': 'I developed the frontend (with <strong>Bootstrap Italia</strong>) and part of the backend of Pucciufficio\'s support site (ticket.pucciufficio.com), which had several bugs, as well as working on other PHP software and a few Windows applications in C#.',
         'exp.pucci.visit': 'Visit pucciufficio.com →',
 
