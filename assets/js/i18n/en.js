@@ -108,7 +108,7 @@ window.I18N.register('en', {
         // ---- Experience ----
         'exp.eyebrow': 'experience',
         'exp.title': 'Work experience',
-        'exp.pucci.role': 'Intern',
+        'exp.pucci.role': 'Software Developer',
         'exp.pucci.desc': 'I developed the frontend (with <strong>Bootstrap Italia</strong>) and part of the backend of Pucciufficio\'s support site (ticket.pucciufficio.com), which had several bugs, as well as working on other PHP software and a few Windows applications in C#.',
         'exp.pucci.visit': 'Visit pucciufficio.com →',
 
@@ -123,7 +123,6 @@ window.I18N.register('en', {
         'projects.ehnHeading': 'What I built for EHN',
         'projects.ehn1.title': 'Site &amp; API',
         'projects.ehn1.p': 'EHN\'s official site, built in Laravel: it exposes the API the Minecraft server consumes to keep game and web platform in sync.',
-        'projects.ehn2.p': 'A Bukkit plugin that bridges server and site: it receives requests from the web platform and pushes updates back into the game in real time.',
         'projects.ehn3.p': 'A plugin for drivable vehicles in the game world (cars, bikes and other rides), integrated with the server\'s economy and permissions.',
         'projects.ehn4.p': 'A plugin for simulated electronic devices in game: smartphones and appliances players can use in roleplay.',
         'projects.ehn5.p': 'A plugin for wearable skins and cosmetics, to customise a character\'s look without touching the base skin.',
