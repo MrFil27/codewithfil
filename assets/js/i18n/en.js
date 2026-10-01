@@ -87,7 +87,7 @@ window.I18N.register('en', {
 
         // ---- Tech stack ----
         'stack.eyebrow': 'languages &amp; tools',
-        'stack.intro': 'Languages, frameworks and tools I know, not a list of everything that exists.',
+        'stack.intro': 'Languages, frameworks and tools I know.',
 
         // ---- Code showcase ----
         'code.eyebrow': 'real code',
